@@ -6,7 +6,7 @@ Throughout, $[x]^+ = \max\{0,x\}$, payoffs are normalized as in \cref{sec:setup}
 
 Stage (4) decisions are taken after Europe's alignment is fixed and after transfers have been paid, so each decision maximizes the decision maker's ex post payoff; by the tie-breaking rule, a power that is indifferent carries out the threat.
 (i) In a crisis with cost $\xi$, defending yields the United States $s_a - \xi$ and not defending yields zero, so it defends iff $s_a \geq \xi$, an event of probability $G(s_a)=\pi_a$.
-(ii) After exit, denial yields $\nu - k_X$ and avoids the audience cost $m_{ai}$ attached to the public denial rule; supplying yields zero. Denial occurs iff $\nu + m_{ai} \geq k_X$. After Atlantic alignment no commitment is at stake and denial occurs iff $\nu \geq k_A$. Because $k_A>k_X$ and $m_{ai}\geq 0$, denial after $A$ implies denial after $X$, so the conditional part of the instrument is $\chi_{ai} = \mathbb{1}\{\nu+m_{ai}\geq k_X\}\mathbb{1}\{\nu<k_A\}$.
+(ii) After exit, denial yields $\nu - k_X$ and avoids the audience cost $m_{ai}$ attached to the public denial rule; supplying yields zero. Denial occurs iff $\nu + m_{ai} \geq k_X$. After Atlantic alignment no commitment is at stake and denial occurs iff $\nu \geq k_A$. Because $k_A>k_X$ and $m_{ai}\geq 0$, denial after $A$ implies denial after $X$, so the conditional part of the instrument is $\chi_{ai} = \mathbf{1}\{\nu+m_{ai}\geq k_X\}\mathbf{1}\{\nu<k_A\}$.
 (iii) After exit, penalizing ASML yields $\gamma - \varphi V$ and failing to do so costs $m_f$; the United States penalizes iff $\varphi V \leq \gamma + m_f$. After Atlantic alignment, penalizing yields $-\varphi V<0$ (since $\varphi>0$) and no commitment is at stake.
 (iv) After $A$, punishment yields China $g_r$ and avoids audience cost $m_r$; it punishes iff $g_r + m_r\geq 0$. After $X$, punishment yields a negative payoff by assumption.
 Europe's expected security loss after $a$ is $(1-\pi_a)S$, so exit adds $(\pi_A - \pi_X)S = \kappa S$. The other terms follow directly, and terms common to both alignments (for instance, AI denial when $\nu\geq k_A$) cancel. \qed
@@ -39,7 +39,7 @@ Recall $\bar L = \min\{V, [\lambda_C B_C - c + \chi_r r]^+\}$. Under the stated 
 
 (a) By \cref{eq:Q}, $S$ enters only through $\kappa S$, and $\kappa = G(s_A) - G(s_X) = 0$ when $s_A = s_X$. Holding $\pi_X$ fixed, $\partial Q/\partial \pi_A = -S< 0$, and $[Q]^+$ is nondecreasing in $Q$.
 (b) $\chi_{ai}$ switches from 0 to 1 at $\nu = k_X - m_{ai}$ and from 1 to 0 at $\nu = k_A$, with $k_X - m_{ai} < k_A$. So $L=[Q_0]^+$ outside the window and $[Q_0-\alpha]^+$ inside it, which is strictly lower iff $\alpha>0$ and $Q_0>0$.
-(c) $V$ enters $Q$ only through $\chi_f = \mathbb{1}\{\varphi V \leq \gamma + m_f\}$, which is nonincreasing in $V$; when it switches from 1 to 0, $Q$ rises by $f$.
+(c) $V$ enters $Q$ only through $\chi_f = \mathbf{1}\{\varphi V \leq \gamma + m_f\}$, which is nonincreasing in $V$; when it switches from 1 to 0, $Q$ rises by $f$.
 (d) By \cref{prop:main} Europe's payoff is $[Q]^+ - \chi_r r = \max\{-\chi_r r,\, \omega - c\}$.
 (e) If $B_U < Q < V$, the last step of the proof of \cref{prop:main} shows that Europe exits. Any enforceable transfer $\tau\in[Q,V]$ would give Europe $\tau - \chi_r r \geq \omega - c$ and the United States $-\tau \geq -V$. \qed
 

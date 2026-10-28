@@ -32,15 +32,17 @@ We read $m_{ai}$, $m_f$, and $m_r$ as the largest audience costs each power can 
 
 \paragraph{Timing.} (1) The United States offers $\tau_U \in [0,B_U]$. (2) China observes $\tau_U$ and offers $\tau_C \in [0,B_C]$. (3) Europe chooses $a$. (4) Transfers are paid, nature draws $\xi$, and each power chooses how to use its instruments. Offers lie on a grid of mesh $\varepsilon>0$ that contains $B_U$ and $B_C$, and we report limits as $\varepsilon \to 0$. Three tie-breaking rules apply throughout the paper: Europe breaks ties in favour of $A$; China does not bid when it would earn zero; and a power that is indifferent between carrying out a threat and not doing so carries it out. Throughout, ``equilibrium'' means a subgame-perfect equilibrium that respects these rules. The United States moves first because, in the scenario and in the 2023--2024 record, Washington sets the terms and others respond \citep[cf.][]{groseclose1996buying}. \Cref{sec:protocol} shows which results depend on this choice.
 
+\input{figures/fig_timing}
+
 \paragraph{Payoffs.} We normalize payoffs relative to Atlantic alignment with no transfers. The United States receives $-\tau_U$ if Europe chooses $A$ and $-V$ if Europe exits. China receives $(1-\theta)W - \tau_C$ if Europe exits and zero otherwise. Europe's payoffs are stated in \cref{eq:uE} below, once we know which instruments are used.
 
 \subsection{Credible conditionality}
 
 Only the part of each instrument that depends on Europe's alignment can enter Europe's choice. The first step is to find which threats survive sequential rationality. Define the indicators
 \begin{equation}\label{eq:chi}
-\chi_{ai} \equiv \mathbb{1}\{\nu + m_{ai} \geq k_X\}\,\mathbb{1}\{\nu < k_A\},\qquad
-\chi_f \equiv \mathbb{1}\{\varphi V \leq \gamma + m_f\},\qquad
-\chi_r \equiv \mathbb{1}\{g_r + m_r \geq 0\}.
+\chi_{ai} \equiv \mathbf{1}\{\nu + m_{ai} \geq k_X\}\,\mathbf{1}\{\nu < k_A\},\qquad
+\chi_f \equiv \mathbf{1}\{\varphi V \leq \gamma + m_f\},\qquad
+\chi_r \equiv \mathbf{1}\{g_r + m_r \geq 0\}.
 \end{equation}
 
 \begin{lemma}[Credible conditionality]\label{lem:credible}
@@ -92,7 +94,7 @@ Assume ASML keeps supplying US-aligned fabs while bargaining continues (no hold-
 \item US offers first, China second: $L = [Q]^+$ (\cref{prop:main}).
 \item Simultaneous offers: the Nash equilibrium set is $L \in \big[[Q]^+, \bar L\big]$; if China never offers more than $(1-\theta)W$, $L = [Q]^+$.
 \item China offers first, the United States second: the subgame-perfect set is $L \in [L_0, \bar L]$; if China never offers more than $(1-\theta)W$, $L \in \big[L_0, [Q]^+\big]$.
-\item Europe makes a take-it-or-leave-it demand of the United States, which accepts when indifferent, and China moves after a rejection: $L = V\cdot\mathbb{1}\{Q>0\}$.
+\item Europe makes a take-it-or-leave-it demand of the United States, which accepts when indifferent, and China moves after a rejection: $L = V\cdot\mathbf{1}\{Q>0\}$.
 \item Europe and the United States alternate offers with discount factor $\delta$, the status quo continues during bargaining, and Europe may exit, on the terms of China's best credible offer, only immediately after rejecting a US offer: $L \to [Q]^+$ as $\delta \to 1$.
 \item In each round Europe proposes with probability $\beta$ and the United States otherwise, no payoffs accrue during bargaining, and after each rejection bargaining breaks down into exit with exogenous probability $\mu$ \citep{binmore1986nash}: as $\mu \to 0$, $L \to [Q + \beta(V-Q)]^+$.
 \end{enumerate}

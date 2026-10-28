@@ -1,0 +1,13 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small]
+\draw[-{Latex[length=2mm]}, line width=0.6pt, gray] (0,0) -- (14.2,0);
+\foreach \x/\lab/\who in {0.8/{US offers $\tau_U\in[0,B_U]$}/{(1)}, 4.4/{China offers $\tau_C\in[0,B_C]$}/{(2)}, 8.0/{Europe chooses $A$ or $X$}/{(3)}, 11.6/{Instruments used}/{(4)}}{
+  \fill[black] (\x,0) circle (2pt);
+  \node[above=4pt, align=center, text width=3.1cm] at (\x,0) {\who\\ \lab};
+}
+\node[below=6pt, align=left, text width=5.2cm, font=\footnotesize] at (12.3,0) {US: defend in a crisis?\\ deny frontier AI? penalize ASML?\\ China: restrict critical inputs?};
+\end{tikzpicture}
+\caption{Timing of the static game. Each instrument in stage (4) is used only if doing so is sequentially rational (\cref{lem:credible}).}
+\label{fig:timing}
+\end{figure}
