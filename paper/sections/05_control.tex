@@ -1,0 +1,91 @@
+\section{Control Rights and the Commitment Problem}\label{sec:control}
+
+The static model takes Europe's ownership of the chokepoint as given. The scenario's 2031 crisis is about ownership itself. Washington proposes to fold ASML into a joint holding company in which it holds a controlling vote over output, customers, and technology transfer. This section asks when a patron prefers to buy or coerce control of a chokepoint rather than pay rents to its holder, and what that does to the holder.
+
+The answer turns on a commitment problem of the kind \citet{fearon1995rationalist} and \citet{powell2006war} identify in shifting-power settings, applied to an object whose ownership shapes future bargaining power \citep{fearon1996bargaining}. Europe's exit premium can change over time. Rearmament lowers $\kappa S$; Chinese credit lines and market offers raise $\omega$; years of being rationed under a tiered AI regime erode the conditional part of the AI lever (\cref{prop:statics}b). If Europe's premium is expected to turn positive, Washington faces future rents, and Europe cannot credibly promise to forgo them. Control rights remove the problem. Ownership determines who gets to choose alignment later, and the patron can buy it while its own threats still bite.
+
+\subsection{Setup}
+
+There are two periods, $t \in \{1,2\}$, and a discount factor $\delta \in (0,1]$. In each period in which Europe holds control, the static game of \cref{sec:model} is played with period-specific parameters, giving exit premium $Q_t$ and AI exposure $\alpha_t$. We assume the AI lever is conditional in both periods ($\chi_{ai,t}=1$) and that the United States wins each static contest ($V_t \geq Q_t + \alpha_t$, $B_U \geq V_t$).
+
+At the start of period 1 the United States may issue an ultimatum: Europe transfers control over ASML's customers, output, and technology for both periods in exchange for a payment $T \geq 0$ made at signing; if Europe refuses, its access to frontier AI is cut in period 1. An ultimatum can be public, in which case failing to carry out the threat costs the United States an audience cost $m \in [0,\bar m]$ \citep{fearon1994domestic}. If Europe accepts, it bears a sovereignty cost $\sigma \geq 0$, which includes the domestic political cost of surrendering a national champion and any capitalized loss of security from relocating capacity to US soil, and China punishes the transfer with $r^c \geq 0$. Once control has passed, the United States has no reason to cut Europe off: its ex post gain from doing so is negative, so the assurance half of the ultimatum is credible \citep{cebul2021coercion}. If Europe refuses, the United States decides whether to cut. Cutting a Europe that remains aligned yields the direct ex post gain $g_N = \nu_1 - k_A$, which is negative outside the extreme-scarcity regime. It also removes the AI term from Europe's period-1 exit costs, so the period-1 exit premium rises from $Q_1$ to $Q_1 + \alpha_1$.
+
+Payoffs, normalized as before, are:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Outcome & Europe & United States\\
+\midrule
+No ultimatum & $[Q_1]^+ + \delta[Q_2]^+$ & $-[Q_1]^+ - \delta[Q_2]^+$\\
+Accept & $T - \sigma - r^c$ & $-T$\\
+Refuse, cut & $[Q_1+\alpha_1]^+ - \alpha_1 + \delta[Q_2]^+$ & $g_N - [Q_1+\alpha_1]^+ - \delta[Q_2]^+$\\
+Refuse, no cut & $[Q_1]^+ + \delta[Q_2]^+$ & $-m - [Q_1]^+ - \delta[Q_2]^+$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Access is restored in period 2; \cref{lem:selflimit} shows why.
+
+\subsection{The bite of a credible threat}
+
+\begin{lemma}[Credible ultimatum and effective bite]\label{lem:bite}
+After a refusal, the United States cuts Europe off if and only if
+\begin{equation}\label{eq:credcut}
+m + g_N \;\geq\; [Q_1+\alpha_1]^+ - [Q_1]^+ .
+\end{equation}
+When it does, Europe's net loss is the \emph{effective bite}
+\begin{equation}\label{eq:bite}
+b_1 \equiv \alpha_1 - \big([Q_1+\alpha_1]^+ - [Q_1]^+\big) = \min\{\alpha_1, [-Q_1]^+\}.
+\end{equation}
+\end{lemma}
+
+Two features matter. First, without an audience cost the threat is not credible: with $m=0$ and $g_N<0$, cutting off a Europe that has merely refused to sell control costs Washington something and gains it nothing. That is why the scenario's White House has to go public. Second, a punishment hurts its target only up to the target's slack. Cutting AI access removes one of the reasons Europe stays aligned. Once $Q_1 + \alpha_1>0$, the rest of the cut comes back to Europe as rent, because Washington must now pay to keep it from exiting. A large stick adds nothing beyond the point where using it would make exit attractive, which is the logic of marginal deterrence \citep{stigler1970optimum}.
+
+\begin{lemma}[Self-limiting sanctions]\label{lem:selflimit}
+Extending the cut into period 2 costs the United States $[Q_2+\alpha_2]^+ - [Q_2]^+$ in additional rent, which equals $\alpha_2$ when $Q_2 \geq 0$. A permanent cut is credible only if the period-2 audience cost exceeds this amount less $g_N$.
+\end{lemma}
+
+The scenario's threat that Europe will ``lose all access, present and future, to American AI'' is therefore not credible inside the model unless Washington has staked a great deal of reputation on it. A permanent cut hands Europe exactly the exit option the cut was meant to deter, at the moment Europe's future premium is positive.
+
+\subsection{Preventive control}
+
+\begin{proposition}[Preventive control]\label{prop:control}
+Under complete information, the United States issues a public ultimatum, and Europe accepts, if and only if
+\begin{enumerate}[label=(\roman*)]
+\item Europe's future exit premium is positive, $Q_2>0$;
+\item the threat can be made credible, $\bar m + g_N \geq [Q_1+\alpha_1]^+ - [Q_1]^+$; and
+\item the effective bite exceeds the deadweight cost of transferring control, $b_1 > \sigma + r^c$.
+\end{enumerate}
+The payment is $T^* = [\delta Q_2 + \sigma + r^c - b_1]^+$ and Europe's payoff is $\max\{\delta Q_2 - b_1,\, -\sigma - r^c\}$.
+\end{proposition}
+
+Because $b_1 \leq [-Q_1]^+$, condition (iii) requires $Q_1 < -(\sigma + r^c)$. Washington must act while Europe's exit premium is still well below zero, and it acts because that premium is expected to become positive. A patron that faces no future rents has no reason to seek control; a patron whose threats no longer bite cannot get it. Preventive control occupies the interval between those two states. The same logic extends to many periods.
+
+\begin{corollary}[Windows]\label{cor:windows}
+In a $T$-period version in which the United States may issue an ultimatum at any date at which Europe still holds control, it does so at some date if and only if there is a date $t$ at which the cut is credible and $b_t > \sigma + r^c$, and a later date $s>t$ with $Q_s>0$.
+\end{corollary}
+
+The US window, the set of dates at which (ii) and (iii) hold, and Europe's window, the dates with $Q_s>0$, are separated by at least $\sigma + r^c$ in units of the exit premium. Under complete information the speed of the shift does not matter, only its direction and the existence of a window of credible coercion before Europe's window opens. Two features of \cref{prop:control} cut against intuition. China's threat to punish the transfer, $r^c$, protects European ownership, because it raises the bite Washington needs. And Europe's sovereignty costs, which commentators treat as an obstacle to a deal, play the same role: a Netherlands that would pay a high domestic price for surrendering ASML is harder to coerce into doing so.
+
+\subsection{Private sovereignty costs and breakdown}
+
+The scenario's endgame is a standoff, not a signature. Under complete information the ultimatum is either accepted or never issued. Breakdown requires that Washington be uncertain about what surrender would cost the European governments involved, which is plausible given coalition politics in The Hague and Berlin. Let $\sigma$ be Europe's private information, uniformly distributed on $[0,\bar\sigma]$, and suppose conditions (i) and (ii) of \cref{prop:control} hold. Write $R \equiv \delta Q_2$, $a \equiv b_1 - r^c > 0$, and $e \equiv -g_N + [Q_1 + \alpha_1]^+ \geq 0$ for what it costs Washington to carry out the cut.
+
+\begin{proposition}[Breakdown]\label{prop:breakdown}
+If the United States issues the ultimatum, Europe accepts if and only if $\sigma \leq s^*$, where
+\begin{equation}\label{eq:sstar}
+s^* = \max\Big\{a - R,\; \min\big\{\bar\sigma,\, \tfrac{a+e}{2}\big\}\Big\}.
+\end{equation}
+With probability $P_b = [1 - s^*/\bar\sigma]^+$ Europe refuses, the cut is carried out, and Europe keeps ASML. $P_b$ is nonincreasing in the bite $b_1$ and in the execution cost $e$, and nondecreasing in China's punishment of the transfer $r^c$ and in $\bar\sigma$. When $a - R > \min\{\bar\sigma, (a+e)/2\}$, the United States offers nothing and $P_b$ is increasing in Europe's future premium $R$.
+\end{proposition}
+
+Breakdown is the scenario's ``neither'' outcome: Europe refuses both great powers, loses frontier access, and keeps the chokepoint. The proposition says when it becomes likely. It is more likely when China credibly threatens to punish a transfer, when the European domestic cost of surrender is uncertain, and when Washington's threat is cheap to execute. The last point is the usual risk-return trade-off \citep{fearon1995rationalist, powell1999shadow}: a patron that loses little from a standoff makes tougher offers and is refused more often.
+
+\subsection{Promises or threats}
+
+Europe could try to remove the commitment problem itself. An allied export-control compact, dual-key licensing that gives Washington a veto over China-bound sales, or treaty-entrenched EU controls would bind Europe to Atlantic alignment in period 2 without transferring ownership. Suppose Europe can adopt such a compact unilaterally before period 1, at cost $\sigma_c$, and China punishes it with $r^b$.
+
+\begin{remark}[Self-binding]\label{rem:bind}
+When the conditions of \cref{prop:control} hold, Europe strictly prefers to bind itself if and only if $\sigma_c + r^b < \sigma + r^c$ and $\sigma_c + r^b < b_1 - \delta Q_2$. Binding removes the US motive for an ultimatum and keeps ownership in Europe, but it forfeits the future rents that a positive $Q_2$ would have earned.
+\end{remark}
+
+A credible promise not to exit and a credible exit threat cannot coexist: the compact works by setting Europe's future exit premium to minus infinity. It does not remove the other source of leverage, the threat to withhold servicing from the United States itself, which \cref{sec:holdup} analyzes. Binding against exit also removes the preventive part of Washington's stake, which can make the United States more willing to concede a hold-up dispute.

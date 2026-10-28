@@ -1,0 +1,126 @@
+\section{A Model of Chokepoint Bargaining}\label{sec:model}
+
+The model has three players: Europe ($E$), the United States ($U$), and China ($C$). Europe controls whether ASML's tools, spare parts, and service engineers reach Chinese fabs. In practice that control is split among the Dutch licensing authority, the firm, and the European Union, and we take the split up in \Cref{sec:nested}. Until then we treat Europe as a unitary actor. The model is built to answer one question: what determines the price Europe can charge the United States for keeping ASML on the Atlantic side of the AI race?
+
+\subsection{Setup}\label{sec:setup}
+
+\paragraph{Alignment.} Europe chooses an alignment $a \in \{A, X\}$. Under Atlantic alignment ($A$), ASML supplies only US-aligned fabs and complies with every US denial requirement. Under exit ($X$), Europe lets ASML supply China with tools, servicing, or licences that the United States wants withheld. Exit stands for any realignment that moves frontier lithography toward China. \Cref{sec:hedge} adds an intermediate option, hedging, which corresponds to the legacy immersion DUV sales and servicing at issue in the 2023--2025 Dutch export controls and in the scenario's 2028 crisis.
+
+\paragraph{Stakes.} The United States loses $V>0$ if Europe exits. $V$ measures the patron's dependence on the chokepoint: what America gives up in the AI race if China gains access to ASML's tools. China gains $W>0$ from Europe's exit. A share $\theta \in [0,1]$ of that gain can be blocked by US jurisdiction over China-bound flows, through the foreign direct product rule, de minimis rules for tools containing US-origin content, and control of US-made subsystems. Enforcing that jurisdiction against China-bound shipments costs the United States little, so we treat it as credible throughout and let $\theta$ capture its reach.
+
+\paragraph{Promises.} Each great power can offer Europe a transfer conditional on alignment. The US offer $\tau_U \geq 0$ is paid if Europe chooses $A$; China's offer $\tau_C \geq 0$ is paid if Europe chooses $X$. Transfers are in kind: tier status under an AI export regime, exemptions from extraterritorial rules, tariff relief, market access, credit, or co-production. Promises must be self-enforcing, so we cap them at $B_U$ and $B_C$, the largest transfers each power would still deliver after Europe has moved. Europe values a unit of China's in-kind offer at $\lambda_C \in (0,1]$, which captures both the inefficiency of in-kind transfers and doubts about delivery. The most China can credibly put on the table, in units of European utility, is therefore
+\begin{equation}\label{eq:omega}
+\omega \equiv \lambda_C \min\{(1-\theta)W,\, B_C\}.
+\end{equation}
+
+\paragraph{Linked instruments.} After Europe chooses its alignment, each great power decides how to use the instruments it controls. These decisions are moves in the game, so a threat matters only if carrying it out is sequentially rational. There are four instruments.
+
+\emph{Security.} With some probability a security crisis occurs in which Europe needs US protection. The United States defends Europe if its stake in doing so, $s_a$, exceeds a crisis-specific cost $K$ drawn from a continuous distribution $G$. Europe loses $S>0$ if it is left undefended. The probability of defence after alignment $a$ is $\pi_a = G(s_a)$. We allow $s_A \geq s_X$: a Europe that supplies China's chipmakers may be worth less to Washington. The \emph{conditionality} of the guarantee is
+\begin{equation}\label{eq:kappa}
+\kappa \equiv \pi_A - \pi_X = G(s_A) - G(s_X) \in [0,1].
+\end{equation}
+
+\emph{Frontier AI.} The United States can deny Europe access to frontier models and inference, which costs Europe $\alpha \geq 0$. Its ex post gain from denial after alignment $a$ is $g_{ai}(a) = \nu - k_a$. Here $\nu$ is the opportunity value of the compute released, which is high when compute is scarce, and $k_a$ is the value to the United States of continuing to supply Europe given its alignment, with $k_A > k_X \geq 0$. If the United States has publicly committed to deny frontier AI to states that realign, failing to apply that rule to an exiting Europe costs it $m_{ai} \geq 0$ in audience costs \citep{fearon1994domestic}; supplying a loyal Europe violates no commitment.
+
+\emph{Firm-level penalties.} The United States can penalize ASML itself, by entity listing, denial of US-origin inputs, or withdrawal of US-person support, which costs Europe $f \geq 0$. Because ASML also supplies America's own fabs and those of its allies, penalizing the firm harms the United States. We write its ex post gain from penalizing an exiting Europe as $g_f = \gamma - \varphi V$, where $\gamma$ is the added denial benefit and $\varphi V$ the self-inflicted cost. The associated audience cost is $m_f \geq 0$.
+
+\emph{Chinese coercion.} China can restrict exports of critical inputs, such as rare earths, magnets, or the legacy chips at issue in the 2025 Nexperia dispute, which costs Europe $r \geq 0$. Punishment reverses nothing in a one-shot game, so China carries it out only if its ex post value, $g_r$, which includes its reputation with other chokepoint holders, plus any audience cost $m_r$ is nonnegative.
+
+\paragraph{Values.} Europe bears an intrinsic cost $\eta \geq 0$ from exit, reflecting the value it places on keeping frontier AI capabilities away from an authoritarian rival that supports Russia's war.
+
+\paragraph{Timing.} (1) The United States offers $\tau_U \in [0,B_U]$. (2) China observes $\tau_U$ and offers $\tau_C \in [0,B_C]$. (3) Europe chooses $a$. (4) Transfers are paid, nature determines whether a crisis occurs and draws $K$, and each power chooses how to use its instruments. Offers lie on a grid of mesh $\varepsilon>0$ and we report limits as $\varepsilon \to 0$; Europe breaks ties in favour of $A$, and China does not bid when it would earn zero. The United States moves first because, in the scenario and in the 2023--2024 record, Washington sets the terms and others respond \citep[cf.][]{groseclose1996buying}. \Cref{sec:protocol} shows which results depend on this choice.
+
+\paragraph{Payoffs.} We normalize payoffs relative to Atlantic alignment with no transfers. The United States receives $-\tau_U$ if Europe chooses $A$ and $-V$ if Europe exits, where $V$ is net of whatever the United States gains from its ex post responses. China receives $(1-\theta)W - \tau_C$ if Europe exits and zero otherwise. Europe's payoffs are stated in \cref{eq:uE} below, once we know which instruments are used.
+
+\subsection{Credible conditionality}
+
+Only the part of each instrument that depends on Europe's alignment can enter Europe's choice. The first step is to find which threats survive sequential rationality. Define the indicators
+\begin{equation}\label{eq:chi}
+\chi_{ai} \equiv \mathbb{1}\{\nu + m_{ai} \geq k_X\}\,\mathbb{1}\{\nu < k_A\},\qquad
+\chi_f \equiv \mathbb{1}\{\varphi V \leq \gamma + m_f\},\qquad
+\chi_r \equiv \mathbb{1}\{g_r + m_r \geq 0\}.
+\end{equation}
+
+\begin{lemma}[Credible conditionality]\label{lem:credible}
+In every subgame-perfect equilibrium, after alignment $a$: (i) the United States defends Europe in a crisis if and only if $s_a \geq K$; (ii) it denies frontier AI after exit if and only if $\nu + m_{ai} \geq k_X$, and after Atlantic alignment if and only if $\nu \geq k_A$; (iii) after exit it penalizes ASML if and only if $\varphi V \leq \gamma + m_f$, and it never penalizes ASML after $A$; (iv) China punishes Europe if and only if $a=A$ and $g_r + m_r \geq 0$. Relative to Atlantic alignment, exit therefore costs Europe
+\begin{equation}\label{eq:c}
+c \equiv \kappa S + \chi_{ai}\,\alpha + \chi_f f + \eta,
+\end{equation}
+and Atlantic alignment costs Europe $\chi_r r$ in Chinese punishment.
+\end{lemma}
+
+Part (ii) shows that the AI instrument is conditional only inside a scarcity window. When compute is plentiful ($\nu + m_{ai} < k_X$), the United States sells to Europe whatever its alignment. When compute is extremely scarce ($\nu \geq k_A$), it rations even a loyal Europe, as the scenario's 2029 Frontier Inference Services Rule does to most of the EU. In both cases denial does not depend on Europe's choice and drops out of $c$. Part (iii) is where the patron's dependence on the chokepoint enters: the more the United States needs ASML, the less credible a threat to cripple it. Jurisdiction over China-bound flows, captured by $\theta$, has no such limit.
+
+Substituting \cref{lem:credible}, Europe's payoffs are
+\begin{equation}\label{eq:uE}
+u_E(A) = \tau_U - \chi_r r, \qquad u_E(X) = \lambda_C \tau_C - c,
+\end{equation}
+up to terms common to both alignments, which affect Europe's welfare but not its choice.
+
+\begin{definition}[Exit premium]\label{def:Q}
+Europe's \emph{exit premium} is the most Europe could gain by exiting, net of the credible costs of exit, relative to Atlantic alignment with no US transfer:
+\begin{equation}\label{eq:Q}
+Q \equiv \omega - c + \chi_r r = \lambda_C\min\{(1-\theta)W, B_C\} - \kappa S - \chi_{ai}\alpha - \chi_f f - \eta + \chi_r r .
+\end{equation}
+\end{definition}
+
+The term follows \citet{hirschman1945national}: a state's influence over a partner depends on what the partner would lose by leaving. In our setting the relevant quantity runs the other way, from the chokepoint holder's side. $Q$ prices Europe's credible alternative, and the US dependence $V$ appears in it only through $\chi_f$.
+
+\subsection{Equilibrium: the exit premium sets the price}
+
+\begin{proposition}[Leverage equals the exit premium]\label{prop:main}
+Suppose $Q \leq \min\{V, B_U\}$. As $\varepsilon \to 0$, every subgame-perfect equilibrium has Europe choosing $A$, with the US transfer converging to
+\begin{equation}\label{eq:L}
+L \equiv [Q]^+ = \max\{0, Q\}.
+\end{equation}
+Europe's payoff converges to $[Q]^+ - \chi_r r$, the United States' to $-[Q]^+$, and China's to zero. If instead $Q > \min\{V, B_U\}$, Europe exits.
+\end{proposition}
+
+We call $L$ Europe's \emph{leverage}: the transfer it extracts for keeping the chokepoint aligned. The logic is that of an auction in which the losing bidder sets the price. China can induce exit only by offering Europe more than the United States does, net of exit costs, and it will spend at most what exit is worth to it. The United States therefore pays exactly enough to make China's best credible offer unattractive. When $Q \leq 0$, even China's best offer cannot outweigh the costs the United States can credibly impose and the value Europe places on its alignment, so the United States pays nothing.
+
+Three features of \cref{prop:main} drive the rest of the paper. First, $V$ does not appear in $L$ except through $\chi_f$. A chokepoint the patron cannot do without is worth no more to its holder than one the patron barely needs, as long as the holder's credible alternative is the same. Second, the threshold $Q>0$ is a credibility condition. It asks whether Europe would actually prefer China's best credible package to Atlantic alignment with nothing, once US responses are taken into account. Third, the condition $Q \leq B_U$ matters. If the United States cannot credibly promise enough, Europe exits even when keeping it aligned is worth more to Washington than exit is worth to Beijing.
+
+\subsection{Which results depend on who moves first}\label{sec:protocol}
+
+A bargaining theorist will ask whether $V$ drops out only because the United States proposes first. It partly does. \Cref{prop:protocol} collects the cases.
+
+\begin{proposition}[Protocol bounds]\label{prop:protocol}
+Assume ASML keeps supplying US-aligned fabs while bargaining continues (no hold-up), $V \geq Q$, and $B_U \geq V$. Let $L_0 \equiv [\chi_r r - c]^+$ and $\bar L \equiv \min\{V, [\lambda_C B_C - c + \chi_r r]^+\}$, the largest transfer a Chinese offer within its cap could force. Europe's leverage $L$ is:
+\begin{enumerate}[label=(\alph*)]
+\item US offers first, China second: $L = [Q]^+$ (\cref{prop:main}).
+\item Simultaneous offers: the Nash equilibrium set is $L \in \big[[Q]^+, \bar L\big]$; with undominated offers, $L = [Q]^+$.
+\item China offers first, the United States second: the subgame-perfect set is $L \in [L_0, \bar L]$; with undominated Chinese offers, $L \in \big[L_0, [Q]^+\big]$.
+\item Europe makes a take-it-or-leave-it demand of the United States, and China moves after a rejection: $L = V\cdot\mathbb{1}\{Q>0\}$.
+\item Europe and the United States alternate offers, the status quo continues during bargaining, and Europe may exit after any rejection on the terms of China's best credible offer: in the stationary equilibrium $L \to [Q]^+$ as the discount factor approaches one.
+\item Bargaining breaks down into exit with exogenous probability $p$ per round \citep{binmore1986nash}: as $p \to 0$, $L \to [Q + \beta(V-Q)]^+$, where $\beta$ is Europe's bargaining weight.
+\end{enumerate}
+\end{proposition}
+
+\begin{corollary}[A necessary condition]\label{cor:necessary}
+Under protocols (a)--(e), with undominated offers in (b) and (c), $Q \leq 0$ implies $L = 0$. The patron's dependence $V$ raises Europe's leverage only through Europe's proposal power (d), through exogenous breakdown risk (f), or through hold-up, which we analyze in \cref{sec:holdup}.
+\end{corollary}
+
+The robust content of the model, then, is the threshold. Whatever the bargaining protocol, a chokepoint holder with no credible alternative gets nothing for its chokepoint. How much of the patron's dependence it captures above the threshold depends on agenda power. Case (d) is the version of the argument that commentators have in mind when they call ASML Europe's last card: if Europe could commit to a demand, it could charge the United States the full value of the chokepoint. But a take-it-or-leave-it demand is itself a commitment, and the only threat that makes it bite is exit. Case (f) is Schelling's threat that leaves something to chance \citep{schelling1960strategy}. If a dispute over ASML could slip out of control and end in realignment whether or not Europe's government wants it (say, through a change of government in The Hague), the United States must pay to avoid that risk even when $Q<0$.
+
+\subsection{What the exit premium depends on}\label{sec:statics}
+
+\Cref{prop:statics} links $L$ to the three features of the European position this paper is about: defence dependence, the credibility of commitments, and economic dependence on China.
+
+\begin{proposition}[Determinants of leverage]\label{prop:statics}
+Under the conditions of \cref{prop:main}:
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Defence dependence works only through conditionality.} $L$ depends on $S$ only through $\kappa S$. If exit does not change the US stake in Europe's defence ($s_A=s_X$), then $\kappa=0$ and no level of defence dependence gives the United States leverage over the chokepoint. Holding $\pi_X$ fixed, $L$ is nonincreasing in the reliability of the guarantee to a loyal Europe, $\pi_A$.
+\item \emph{Compute scarcity creates and then destroys the AI lever.} As $\nu$ rises, $Q$ falls by $\alpha$ when $\nu + m_{ai}$ crosses $k_X$, and rises by $\alpha$ when $\nu$ crosses $k_A$. Leverage is therefore non-monotone in the scarcity of compute.
+\item \emph{Patron dependence protects the holder only against self-harming sanctions.} $L$ is nondecreasing in $V$. It changes only when $\varphi V$ crosses $\gamma + m_f$ and firm-level penalties lose credibility, and then rises from $[Q]^+$ to $[Q+f]^+$. Jurisdiction over China-bound flows ($\theta$) remains credible for every $V$.
+\item \emph{Chinese coercion is a tax on the alliance.} The US transfer $[Q]^+$ rises one for one with $\chi_r r$ when $Q>0$. Europe's payoff, $\max\{\omega - c,\, -\chi_r r\}$, is nonincreasing in $r$ and nondecreasing in China's credible offer $\omega$, so China's promises raise Europe's payoff only when $Q>0$, and China's threats never do.
+\item \emph{Unreliable US promises cause inefficient exit.} If $B_U < Q \leq V$, Europe exits even though the United States values Atlantic alignment more than China values exit.
+\end{enumerate}
+\end{proposition}
+
+Part (a) turns on a distinction that alliance theory has long drawn between how much an ally depends on its patron and how much the patron can make that dependence contingent \citep{snyder1984security, morrow1991alliances, benson2012constructing}. Europe's need for US protection is enormous, but it becomes American leverage over ASML only if Washington would actually protect a loyal Europe more readily than a realigned one. The United States gets the most leverage from a guarantee that is reliable for loyal allies and void for disloyal ones, the arrangement \citet{lake2009hierarchy} calls hierarchy. Two other kinds of guarantee give it none. An unconditional guarantee, one the United States would honour because it values European security for its own reasons, removes security from the bargain. So does a guarantee Europe no longer believes ($\pi_A$ near $\pi_X$). The more doubt Washington casts on its commitment to allies who comply, the less leverage that commitment buys it over allies deciding whether to comply.
+
+Part (b) captures a two-sided effect of the compute shortage the scenario describes. Scarcity makes denial cheap, which gives Washington a credible threat against an exiting Europe. Extreme scarcity leads Washington to ration loyal allies as well, which removes the threat's conditional part. The Frontier Inference Services Rule in the scenario, which halves allocations to a Europe that has done nothing, lowers the cost of exit at the same time as it lowers Europe's welfare.
+
+Part (c) states precisely where the conventional view is right. The scenario observes that FDPR penalties on ASML ``would also harm the US''. The model agrees that this matters, but only for firm-level penalties, and only if the United States has no cheaper instrument aimed at China-bound flows. As \cref{sec:background} documents, it does.
+
+Part (d) separates the two channels through which Europe's economic dependence on China operates. China's capacity to punish Atlantic alignment raises what Washington must pay, but the payment only compensates Europe for the punishment it will absorb. China's capacity to reward exit raises Europe's payoff, but only when Europe already has leverage. De-risking that reduces China's coercive reach therefore never lowers Europe's payoff. De-risking that reduces the value of China's promises lowers it only in the region $Q>0$, which, we argue in \cref{sec:revisited}, Europe has not been in since 2019.

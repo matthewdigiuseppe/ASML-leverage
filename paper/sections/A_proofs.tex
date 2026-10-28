@@ -1,0 +1,91 @@
+\section{Proofs}\label{app:proofs}
+
+Throughout, $[x]^+ = \max\{0,x\}$. Payoffs are normalized as in \cref{sec:setup}.
+
+\subsection*{Proof of \Cref{lem:credible}}
+
+Stage (4) decisions are taken after Europe's alignment is fixed and after transfers have been paid, so each decision maximizes the decision maker's ex post payoff.
+(i) In a crisis with cost $K$, defending yields the United States $s_a - K$ and not defending yields zero, so it defends iff $s_a \geq K$, an event of probability $G(s_a)=\pi_a$.
+(ii) After exit, denial yields $\nu - k_X$ plus avoidance of the audience cost $m_{ai}$ attached to the public denial rule; supplying yields zero. Denial occurs iff $\nu + m_{ai} \geq k_X$. After Atlantic alignment no commitment is at stake and denial occurs iff $\nu \geq k_A$. Because $k_A>k_X$ and $m_{ai}\geq 0$, denial after $A$ implies denial after $X$, so the conditional part of the instrument is $\chi_{ai} = \mathbb{1}\{\nu+m_{ai}\geq k_X\}\mathbb{1}\{\nu<k_A\}$.
+(iii) After exit, penalizing ASML yields $\gamma - \varphi V$ and failing to do so costs $m_f$; the United States penalizes iff $\varphi V \leq \gamma + m_f$. After Atlantic alignment, penalizing yields $-\varphi V<0$ and no commitment is at stake.
+(iv) After $A$, punishment yields China $g_r$ and avoids audience cost $m_r$; it punishes iff $g_r + m_r\geq 0$. After $X$ China has obtained what it sought and punishment has no rationale.
+Europe's expected security loss after $a$ is $(1-\pi_a)S$, so exit adds $(\pi_A - \pi_X)S = \kappa S$. The other terms follow directly, and terms common to both alignments (for instance, AI denial when $\nu\geq k_A$) cancel. \qed
+
+\subsection*{Proof of \Cref{prop:main}}
+
+Fix the grid mesh $\varepsilon>0$ and assume $B_U$ and $B_C$ are grid points. By \cref{lem:credible} and \cref{eq:uE}, Europe chooses $A$ iff $\tau_U - \chi_r r \geq \lambda_C\tau_C - c$.
+
+\emph{China's best response.} Given $\tau_U$, China wins only with an offer $\tau_C$ satisfying $\lambda_C \tau_C > \tau_U - \chi_r r + c$. Let $\underline\tau_C(\tau_U)$ be the smallest grid point with this property. Winning yields $(1-\theta)W - \underline\tau_C(\tau_U)$, losing yields zero, and China does not bid at zero profit. China therefore wins iff $\underline\tau_C(\tau_U) \leq B_C$ and $\underline\tau_C(\tau_U) < (1-\theta)W$. Since $\underline\tau_C(\tau_U) \in \big((\tau_U - \chi_r r + c)/\lambda_C,\; (\tau_U - \chi_r r + c)/\lambda_C + \varepsilon\big]$, China wins whenever $\tau_U < Q - \lambda_C\varepsilon$ and loses whenever $\tau_U \geq Q$.
+
+\emph{The US offer.} Any $\tau_U \geq [Q]^+$ that is a grid point keeps Europe aligned. The United States' cheapest such offer, $\tau_U^\varepsilon$, satisfies $[Q]^+ - \lambda_C \varepsilon \leq \tau_U^\varepsilon \leq [Q]^+ + \varepsilon$ (the lower bound because offers in $[Q - \lambda_C\varepsilon, Q)$ may also deter China, depending on where the grid falls). Keeping Europe aligned at this price is better for the United States than losing $V$ iff $\tau_U^\varepsilon \leq V$, and feasible iff $\tau_U^\varepsilon \leq B_U$. Under $Q \leq \min\{V,B_U\}$ this holds in the limit, so every subgame-perfect equilibrium has $\tau_U^\varepsilon \to [Q]^+$ and Europe choosing $A$. Payoffs follow from \cref{eq:uE}. If $Q > \min\{V,B_U\}$, for small $\varepsilon$ the United States either cannot or will not offer $Q$, and China wins. \qed
+
+\subsection*{Proof of \Cref{prop:protocol}}
+
+Write $\bar L \equiv \min\{V, [\lambda_C B_C - c + \chi_r r]^+\}$, the largest US transfer a Chinese offer within the cap can force. Under the stated assumptions, $Q \leq \bar L \leq V$.
+
+(a) This is \cref{prop:main}.
+
+(b) In any Nash equilibrium in which Europe chooses $A$, the US offer must satisfy $\tau_U \geq [Q]^+$; otherwise China could deviate to a profitable winning offer. The US offer must also equal $[\lambda_C\tau_C - c + \chi_r r]^+$ for China's actual offer $\tau_C$; otherwise the United States could lower its offer and still win. Any $\tau_C \leq B_C$ with $\lambda_C\tau_C - c + \chi_r r \in [[Q]^+, \bar L]$ supports such an equilibrium, with the United States offering exactly that amount: China loses, earns zero, and cannot profitably win because $\tau_U \geq [Q]^+$; the United States prefers matching to losing because the required transfer is at most $V$. China's offers above $(1-\theta)W$ are weakly dominated, because if accepted they yield a loss. With undominated offers, $\lambda_C\tau_C - c + \chi_r r \leq Q$, so $L = [Q]^+$.
+
+(c) Given $\tau_C$, the United States offers $[\lambda_C\tau_C - c + \chi_r r]^+$ if that is at most $V$, and otherwise lets Europe exit. Because $Q\leq V$, China cannot win at a price below its valuation, so China earns zero and is indifferent among all losing offers. Every $\tau_C \in [0,B_C]$ with $\lambda_C\tau_C - c + \chi_r r \leq V$ is part of a subgame-perfect equilibrium, which gives $L \in [L_0, \bar L]$, with $L_0 = [\chi_r r - c]^+$ obtained at $\tau_C=0$. Excluding weakly dominated offers above $(1-\theta)W$ gives $L \in [L_0, [Q]^+]$.
+
+(d) After a US rejection, China can induce exit at a profit iff $Q>0$, by offering slightly more than $(c-\chi_r r)/\lambda_C$. If $Q>0$ the United States accepts any demand up to $V$, so Europe demands $V$. If $Q\leq 0$ a rejection leaves Europe aligned with no transfer, so the United States rejects every positive demand.
+
+(e) The status quo gives the United States the alignment it wants and gives Europe nothing, so absent exit the United States accepts no positive transfer and the inside-option payoff is zero. Exit yields Europe $\omega - c$ per period against $-\chi_r r$ under the status quo. Suppose $Q>0$. In the stationary equilibrium the United States, when it proposes, offers the per-period transfer $Q$, the least that stops Europe from rejecting and exiting. When Europe proposes, the United States accepts a transfer $\tau$ forever iff $-\tau/(1-\delta) \geq -\delta Q/(1-\delta)$, so Europe demands $\delta Q$. Both converge to $Q$ as $\delta\to 1$. If $Q\leq 0$, exit is not a credible response to a rejection and the United States accepts no positive transfer. This is the outside-option principle \citep{shaked1984involuntary, sutton1986noncooperative}.
+
+(f) With exogenous breakdown into exit, the limit of the alternating-offers game as $p\to0$ is the Nash bargaining solution with breakdown payoffs as the disagreement point \citep{binmore1986nash}: $-V$ for the United States and $\omega - c$ for Europe. Maximizing $(V-\tau)^{1-\beta}(\tau - \chi_r r - \omega + c)^{\beta}$ gives $\tau = Q + \beta(V-Q)$, truncated at zero. \qed
+
+\subsection*{Proof of \Cref{prop:statics}}
+
+(a) By \cref{eq:Q}, $S$ enters only through $\kappa S$, and $\kappa = G(s_A) - G(s_X) = 0$ when $s_A = s_X$. Holding $\pi_X$ fixed, $\partial Q/\partial \pi_A = -S\leq 0$, and $[Q]^+$ is nondecreasing in $Q$.
+(b) $\chi_{ai}$ switches from 0 to 1 at $\nu = k_X - m_{ai}$ and from 1 to 0 at $\nu = k_A$, with $k_X - m_{ai} < k_A$.
+(c) $V$ enters $Q$ only through $\chi_f = \mathbb{1}\{\varphi V \leq \gamma + m_f\}$, which is nonincreasing in $V$; when it switches from 1 to 0, $Q$ rises by $f$.
+(d) By \cref{prop:main} Europe's payoff is $[Q]^+ - \chi_r r = \max\{-\chi_r r,\, \omega - c\}$.
+(e) See the last step of the proof of \cref{prop:main}. \qed
+
+\subsection*{Proof of \Cref{lem:bite,lem:selflimit}}
+
+After a refusal, cutting yields the United States $g_N - [Q_1+\alpha_1]^+ - \delta[Q_2]^+$ and not cutting yields $-m - [Q_1]^+ - \delta[Q_2]^+$; comparing gives \cref{eq:credcut}. Europe's payoff falls by $\alpha_1 - ([Q_1+\alpha_1]^+ - [Q_1]^+)$. If $Q_1\geq 0$ this is zero; if $-\alpha_1 < Q_1 < 0$ it is $-Q_1$; if $Q_1 \leq -\alpha_1$ it is $\alpha_1$. Hence $b_1 = \min\{\alpha_1, [-Q_1]^+\}$. The period-2 statement follows by the same comparison applied to period 2. \qed
+
+\subsection*{Proof of \Cref{prop:control}}
+
+Suppose (ii) holds, so the United States can choose $m$ large enough to make the cut credible. Europe's refusal payoff is $\rho_E = [Q_1]^+ - b_1 + \delta[Q_2]^+$, and it accepts iff $T - \sigma - r^c \geq \rho_E$. The cheapest acceptable payment is $T^* = [\rho_E + \sigma + r^c]^+$. The United States issues the ultimatum iff $-T^* > -[Q_1]^+ - \delta[Q_2]^+$, i.e., iff its gain $\Gamma \equiv [Q_1]^+ + \delta[Q_2]^+ - T^*$ is positive.
+
+If $b_1 = 0$, then $T^* \geq [Q_1]^+ + \delta[Q_2]^+$ and $\Gamma \leq 0$. If $b_1>0$, then $Q_1<0$, so $\Gamma = \delta[Q_2]^+ - [\delta[Q_2]^+ - b_1 + \sigma + r^c]^+ = \min\{\delta[Q_2]^+,\, b_1 - \sigma - r^c\}$, which is positive iff $Q_2>0$ and $b_1>\sigma + r^c$. If (ii) fails, refusal costs Europe nothing, $T^* = [Q_1]^+ + \delta[Q_2]^+ + \sigma + r^c$, and $\Gamma \leq 0$. Europe's payoff when the ultimatum is issued is $T^* - \sigma - r^c = \max\{\delta Q_2 - b_1, -\sigma - r^c\}$. \qed
+
+\subsection*{Proof of \Cref{cor:windows}}
+
+Call a date $t$ \emph{eligible} if the cut is credible at $t$, $b_t > \sigma + r^c$, and $Q_s>0$ for some $s>t$. In any subgame starting at a date with no later eligible date, the argument in the proof of \cref{prop:control}, with $\delta[Q_2]^+$ replaced by the discounted sum of later rents, shows that no ultimatum is issued after that date. Let $t^*$ be the last eligible date. In the subgame beginning at $t^*$ with Europe in control, the continuation after a refusal contains strictly positive rents and no further ultimatum, so the United States' gain from issuing is $\min\{\text{discounted future rents},\, b_{t^*} - \sigma - r^c\} > 0$, and it issues. On the equilibrium path an ultimatum is therefore issued at $t^*$ or earlier. Conversely, if no date is eligible, then by backward induction no subgame contains an ultimatum: at each date either the cut is not credible, or the bite is too small, or there are no later rents to remove, and in each case the gain from issuing is nonpositive. We also verified the statement numerically on 100{,}000 random parameter draws with up to six periods (\cref{app:numerics}). \qed
+
+\subsection*{Proof of \Cref{prop:breakdown}}
+
+With conditions (i)--(ii) of \cref{prop:control}, the United States sets $m\geq e$, so it carries out the cut after a refusal. Europe accepts iff $T - \sigma - r^c \geq -b_1 + R$, i.e., iff $\sigma \leq s \equiv T + a - R$. Relative to issuing no ultimatum, the United States gains $R - T$ if Europe accepts and loses $e$ if Europe refuses. Write $x = R - T \leq R$, so $s = a - x$. For $s \in (0,\bar\sigma)$ its expected gain is
+\begin{equation*}
+\Pi(x) = \frac{(a-x)\,x - (\bar\sigma - a + x)\,e}{\bar\sigma},
+\end{equation*}
+which is strictly concave with unconstrained maximizer $x^\circ = (a-e)/2$, so $s^\circ = (a+e)/2$. If $s \geq \bar\sigma$, every type accepts and $\Pi = x$, which is increasing in $x$, so the United States never sets $s>\bar\sigma$. Imposing $s\leq \bar\sigma$ and $x\leq R$ gives $s^* = \max\{a-R, \min\{\bar\sigma, (a+e)/2\}\}$. The comparative statics follow because $s^*$ is nondecreasing in $a = b_1 - r^c$ and in $e$, and $P_b = [1-s^*/\bar\sigma]^+$. In the corner $s^* = a-R$, $s^*$ is decreasing in $R$. The United States issues the ultimatum iff $\Pi(x^*)>0$; in the interior this is $(a+e)^2 > 4\bar\sigma e$, and with $e=0$ it reduces to $a>0$. \qed
+
+\subsection*{Proof of \Cref{rem:bind}}
+
+If the conditions of \cref{prop:control} hold, Europe's payoff without binding is $\max\{\delta Q_2 - b_1, -\sigma - r^c\}$. With binding, Europe has no future exit premium, the United States gains nothing from an ultimatum, and Europe's payoff is $-\sigma_c - r^b$ (period-1 rents are zero because $Q_1<0$). Binding is strictly better iff $-\sigma_c - r^b$ exceeds both terms. \qed
+
+\subsection*{Proof of \Cref{prop:nested}}
+
+(a) If $y < f^F$ the firm refuses to ship after a licence, and exit occurs only if the state compels it, which costs $k_s$; substituting into \cref{prop:main} gives the result. (b) China needs only $h$'s consent, so the argument of \cref{prop:main} applies to $h$'s payoffs. A benefit $\Delta$ that $h$ receives under $A$ and loses under exit raises $c_h$ by $\Delta$. (c) With no rival bidder, a countermeasure is adopted iff the members with $q_i>\tau_i$ form a qualified majority, which the United States prevents most cheaply by paying $[q_i]^+$ to every member of some blocking coalition. With a rival bidder moving second, the rival buys a qualified majority $S$ at cost $\sum_{i\in S}[\tau_i - q_i]^+$ whenever that is less than $B$, which gives the linear program. Example: three members, adoption by two, $q_i = 0$. Then $K(0)=0$, while $K(B)$ requires $\tau_i + \tau_j \geq B$ for every pair, so $K(B) = 3B/2$ with $\tau_i = B/2$ for all three. \qed
+
+\subsection*{Proof of \Cref{prop:holdup}}
+
+(a) Let $w(t)$ be Europe's expected share at date $t$ before the proposer is drawn. A proposer offers the responder exactly its continuation value, and agreement is immediate because delay is weakly costly to both. Hence
+\begin{equation*}
+w(t) = \psi \max\{w(t+\Delta) - \hat c_E(t)\Delta,\, 0\} + (1-\psi)\min\{1,\, w(t+\Delta) + \hat c_U(t)\Delta\}.
+\end{equation*}
+After both buffers are exhausted the costs are constant; in the interior $w(t) - w(t+\Delta) = [(1-\psi)\hat c_U - \psi\hat c_E]\Delta$, so in an infinite horizon the only bounded solution is $w=1$ if $(1-\psi)\hat c_U > \psi\hat c_E$ and $w=0$ otherwise \citep[cf. the fixed-cost case of][]{rubinstein1982perfect}. Between the two buffer dates only one side bears costs. If $D>0$, Europe alone bears costs on $[\tau_E,\tau_U)$ and $w$ falls (moving forward in time) at rate $\psi\hat c_E$, truncated at zero; if $D<0$, the United States alone bears costs on $[\tau_U,\tau_E)$ and $w$ rises at rate $(1-\psi)\hat c_U$, truncated at one. Before the earlier buffer date nobody bears costs and $w$ is constant. Taking $\Delta\to 0$ gives the stated shares.
+(b) Without interruption the United States bears no cost and Europe bears $c_E$ from date zero, so $p^*=0$. With interruption, part (a) with $\tau_E=0$ gives $p^* = [1 - \psi \tau_U (c_E+\ell)/s_E]^+ = [1-\tau_U/H_E]^+$ if Europe is the less vulnerable side post-buffer, and $p^*=0$ otherwise. Interruption is played iff it raises $p^*$. \qed
+
+\subsection*{Proof of \Cref{prop:hedge}}
+
+After a hedge, the United States compares withholding $k$, which yields $g_k(H)$ but removes $k$ from Europe's exit costs, so that the subsequent static contest costs it $[Q + D_k]^+$, with not withholding, which costs $m_k$ if it had committed to punish hedging and leaves the contest at $[Q]^+$. Jurisdiction over hedged flows does not enter Europe's exit costs, so enforcing it leaves the contest at $[Q]^+$. \qed
+
+\section{Numerical verification}\label{app:numerics}
+
+We checked each result by brute force in Python, with scripts in the replication folder. \Cref{prop:main} was checked by backward induction on a grid of offers (mesh 0.01) over random parameter draws with $V\geq Q$. \Cref{prop:control} was checked on 200{,}000 random draws with ties never broken in favour of the threat, and \cref{cor:windows} on 100{,}000 draws with two to six periods; both produced zero mismatches. \Cref{prop:breakdown} was checked against direct numerical optimization of the US offer. \Cref{prop:holdup} was checked by backward induction in discrete time with $\Delta = 0.001$; deviations from the closed form are $O(\Delta)$ once the stationary phase is long enough to reach its boundary value.
