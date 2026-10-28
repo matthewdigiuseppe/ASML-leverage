@@ -84,10 +84,7 @@ def fig_windows():
             first_eu = t[eu][0]
             last_us = t[us][-1] if us.any() else None
             ax.text(first_eu - 0.35, -2.1, "Europe's\nwindow", color=TEXT2, fontsize=7.5)
-            if last_us is not None:
-                ax.annotate("preventive\ndemand", xy=(last_us, Q[last_us]), xytext=(last_us - 1.4, -0.4),
-                            fontsize=7.5, color=TEXT2,
-                            arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.6))
+            pass
         ax.text(0.0, -1.55, "US window", color=TEXT2, fontsize=7.5)
         if not eu.any():
             ax.text(5.8, 0.35, "no later rents:\nno demand", color=TEXT2, fontsize=7.5)
