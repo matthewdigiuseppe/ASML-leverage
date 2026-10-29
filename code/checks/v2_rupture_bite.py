@@ -1,7 +1,8 @@
 """Remark (slack under rupture risk). With Europe's alignment payoff given by the frequent-offer
 limit P*(Q) = max{Q, psi(Q + beta(V - Q))} of Proposition 1, withdrawing a threat set J with
 Delta^A = u + d and Delta^X = u costs Europe B = u + d - [P*(Q + d) - P*(Q)].
-Checks: (1) B <= u + min{d, Lambda_psi}, Lambda_psi = P*(Q) - Q >= Lambda = [-Q]^+;
+Checks: (1) B <= u + min{d, Lambda_psi}, Lambda_psi = P*(Q) - Q, which exceeds Lambda = [-Q]^+
+exactly when P*(Q) > [Q]^+;
 (2) B = u + min{d, [-Q]^+} when lambda = 0; (3) an example where the bite exceeds Lambda.
 Run: python3 -I v2_rupture_bite.py
 """
