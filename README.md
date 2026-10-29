@@ -2,6 +2,8 @@
 
 **Read the paper:** [`paper/ASML_leverage_v2_draft.pdf`](paper/ASML_leverage_v2_draft.pdf) (working draft, 29 October 2026, 103 pages)
 
+**Short version:** [`paper/minimal/minimal_model.pdf`](paper/minimal/minimal_model.pdf), a minimal model of the main point in three numbers (9 pages, one figure)
+
 Authors: Matt DiGiuseppe and Claude (Anthropic)
 
 ## What this repository is
@@ -26,7 +28,7 @@ The work took place on 28 and 29 October 2026.
 ## What the model finds, in brief
 
 1. **ASML pays Europe only if Europe has a credible alternative.** Europe's leverage starts from what it could credibly get by realigning with China, net of what Washington could credibly make that move cost. On our reading that alternative has been worse than staying aligned since 2019, so Washington has not had to pay. The 2024 US exemption for the Netherlands is a status Washington can revoke, not a payment. Washington's own need for ASML matters only through narrow channels: when talks could break down while Europe gets to make offers, and when Europe can hurt Washington during a dispute.
-2. **Washington's pressure draws on one budget.** Washington can extract concessions only up to the gap between what realigning would cost Europe and what China would credibly give it. Demands on export controls, servicing, trade terms and defence spending all compete for that same gap. That is why Europe complies with some demands and resists others, such as limits on servicing machines already in China.
+2. **Washington's pressure draws on one budget.** Washington can extract concessions only up to the gap between what realigning would cost Europe and what China would credibly give it. Demands on export controls, servicing, trade terms and defence spending all compete for that same gap. That would explain why Europe complied on sales controls but resisted limits on servicing machines already in China, if Washington had won the sales controls with threats. We found no such threat; on our reading, US legal reach over ASML's inputs and staff did that work.
 3. **Making protection depend on loyalty is the price of concessions.** A Washington that wants nothing beyond alignment ties its defence guarantee to Europe's behaviour only as far as it must. Tying it further costs Washington allied confidence, and it pays that cost only to extract more.
 4. **China's pressure mostly costs Washington.** Beijing targets specific European steps (the 2025 Nexperia dispute is the leading case) rather than alignment as such. That mainly changes which concessions Washington can get.
 5. **A shrinking hold invites a demand for control.** If Europe's alternatives improve, Washington has a reason to lock in control of ASML while its threats still work. Visible European investment in autonomy hastens that demand. Europe's best defence is to bind itself first, through EU-level controls, which works only if Washington does not want control for its own sake.
@@ -39,6 +41,7 @@ Empirically, the record is consistent with US legal reach over ASML's inputs and
 | Path | Contents |
 |---|---|
 | `paper/` | LaTeX source (`main.tex`, `sections/`, `preamble.tex`, `refs.bib`), figures, and the compiled PDF |
+| `paper/minimal/` | The minimal model: a short note (`minimal_model.tex` and PDF) and its figure script; checks in `code/checks/minimal_model_check.py`, design, verification and reviews in `notes/minimal/` |
 | `paper/sections/` | One file per section; `A0_supplementary`, `A_proofs`, `B_numerics` and `C_scenario` are the appendices |
 | `code/checks/` | Python scripts that check each result by brute force; `README.md` there maps scripts to results (the `v2_*` scripts check the current results) |
 | `notes/review/` | The initial literature and fact review, written and fact-checked by subagents |
