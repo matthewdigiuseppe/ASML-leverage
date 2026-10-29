@@ -1,0 +1,50 @@
+\section{Europe 2031 Read Through the Model}\label{app:scenario}
+
+\emph{Europe 2031} stages four rounds of US--European bargaining over ASML \citep{juijn2026europe}. Its authors say the storyline is not meant to be a forecast, and we do not treat it as evidence. With as many free parameters as our model has, the statement that an episode is an equilibrium carries little information on its own. \Cref{tab:scenario} therefore states, for each move, the result that applies and the conditions under which the move is an equilibrium, so that a reader can see what the story assumes about the parameters.
+
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Europe 2031 moves and the conditions under which they are equilibria}\label{tab:scenario}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Scenario move & Results & Equilibrium when\\
+\midrule
+May 2028: Washington demands an end to ASML's immersion sales and servicing in China and threatens the foreign direct product rule; the Dutch comply and get nothing in return &
+\cref{prop:counter}(b), \cref{cor:master}(c) &
+The jurisdictional threat is credible ($e_F\le\bar m_U$), so it deters without being carried out and leaves $Q$ unchanged. A zero transfer needs $Q\le 0$ and either no rupture risk in the dispute ($\lambda=0$) or $Q+\beta(V-Q)\le 0$.\\
+\addlinespace
+April 2029: the Frontier Inference Services Rule puts the Netherlands in Tier~1 and most of Europe in Tier~2 &
+\cref{sec:security}, \cref{rem:gatekeeper}, \cref{cor:rationing} &
+Rationing a loyal Europe lowers $x_{ai}(A)$, hence $d_{ai}$ and Washington's slack. On our reading Washington rations only if the compute it keeps is worth more to it than the slack it loses. Tier~1 lowers the gatekeeper's price only if it is baseline provision credibly withdrawn on exit.\\
+\addlinespace
+May 2029: an Anti-Coercion Instrument measure restricting ASML's exports and servicing to US fabs in Arizona falls short of a qualified majority &
+\cref{rem:council}, \cref{cor:interrupt} &
+The named opponents and abstainer do not block (\cref{sec:council}). Failure needs more members with $q_i\le 0$ (six more, or a large state) or consensus norms that keep the measure from a vote. Even adopted, the measure adds little where Washington can compel servicing ($h$ near one).\\
+\addlinespace
+March 2031: Washington says that through Taiwanese partners it can forgo ASML longer than Europe can forgo frontier AI &
+\cref{prop:pain}, \cref{cor:interrupt} &
+The claim is that the US buffer $t_U$ exceeds $\bar t$. It holds for a measure confined to US soil if $h$ is near one; for a broad interruption it depends on $h$ in Taiwan and Korea. It concerns $c_S$ and leaves $V$ unchanged.\\
+\addlinespace
+March 2031: a joint Dutch-American holding with a US controlling vote, capital for US production and windfall-indexed transfers, made public with a Tier~3 threat &
+\cref{prop:control}, \cref{cor:control}, \cref{cor:windows}, \cref{lem:selflimit} &
+Issued iff $\Gamma>0$: a premium expected to turn positive and a bite above $\sigma+r^c$ while slack lasts, or $v_c>\iota$. A vote in a Dutch company has low $\Delta_c$, which lowers $\Gamma$. Transfers due after the transfer of control are credible only up to $\bar m_U$. A permanent cut adds no bite at dates with $Q\ge 0$.\\
+\addlinespace
+March 2031: Europe refuses; Beijing says rare-earth terms will be reviewed if the Dutch sign &
+\cref{prop:breakdown}, \cref{cor:control}(d) &
+Under complete information an issued ultimatum is accepted, so refusal needs private sovereignty costs. China's threat is never carried out if control passes; if credible and large enough ($\Gamma(r_{\max})\le 0$) it deters the demand.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{2028.} The scenario's Washington demands that The Hague end ASML's remaining sales and servicing of immersion tools in China and threatens the foreign direct product rule; ``The Dutch cave'', and nothing is negotiated in return \citep{juijn2026europe}. The demand concerns the hedge, and the threat uses flow jurisdiction, which by \cref{prop:counter}(b) is credible whenever its net ex post cost is within Washington's stake and does not depend on Europe's slack. The text concedes that ``such penalties would also harm the US''. In our model that self-harm attaches to penalties on the whole firm ($\chi_f$), and jurisdiction over China-bound flows stays credible for every $V$. What the episode needs is a nonpositive premium and no rupture risk. The crisis comes during a compute crunch, when $V$ is high, so if the dispute carried a hazard of rupture, \cref{cor:master}(c) would give Europe a positive transfer whenever $Q+\beta(V-Q)>0$. The scenario attributes the outcome to a European position that ``fragments before it has properly formed''. Licensing is a Dutch decision (\cref{sec:gatekeeper}), and solidarity among member states reaches the gatekeeper only through transfers, so a united position would not by itself have changed $Q$.
+
+\paragraph{2029.} The Frontier Inference Services Rule caps Tier~2 countries at 25 percent of any provider's frontier inference, which the text says means ``roughly halving European allocations'', while the Netherlands joins the Five Eyes, Japan, South Korea and Taiwan in Tier~1 \citep{juijn2026europe}. Cutting a loyal Europe lowers the conditional part of the AI instrument, because conditional parts are measured from what a loyal ally receives (\cref{sec:security}). Washington spends slack to keep compute, and Europe's premium drifts upward. The real AI Diffusion Rule, rescinded before it took effect, is our evidence that such tiering is costly for Washington (\cref{sec:security}). Tier~1 for the Netherlands is the targeted benefit of \cref{rem:gatekeeper}. The failed Council vote is the least secure episode. The arithmetic in \cref{sec:council} shows that the states the scenario names cannot block, so the story needs further members with $q_i\le 0$ or an informal norm that keeps a measure large states dislike from reaching a vote. The measure itself, a restriction on exports and servicing to US fabs in Arizona, is a hold-up instrument aimed at the servicing Washington can most easily compel (\cref{sec:holdup}).
+
+\paragraph{The stockpile.} Washington's claim that it has ``amassed enough EUV machines and maintenance know-how'' through Taiwanese partners to outlast Europe \citep{juijn2026europe} is a claim about $t_U$ and $h$ in \cref{cor:interrupt}. It lowers $c_S$, what Washington's own fabs would lose in a dispute, and leaves $V$, its loss if China gained the tools, where it was. The claim and the ultimatum are therefore compatible: a Washington that can do without ASML's servicing still has a motive to keep China from gaining the chokepoint. Under complete information the claim would be either true or irrelevant. As a bluff it belongs to the incomplete-information extension that \cref{sec:scope} leaves aside.
+
+\paragraph{2031.} The vice president's offer is a preventive demand of the kind \cref{prop:control} describes, issued ``now, while the option still exists'' \citep{juijn2026europe}. On our reading, Chinese credit to a Portuguese bank, to Greece and to a Spanish region raises $\omega$, and rationing has lowered $d_{ai}$, so Washington expects the premium to turn positive and acts while its threat still bites (\cref{cor:windows}). Three details of the offer bear on the conditions. A controlling vote in a Dutch-American holding stays under Dutch law and has low enforceability $\Delta_c$, which by \cref{cor:control}(c) lowers what control is worth to Washington. Capital for production on US soil raises $\Delta_c$. Cash transfers indexed to US AI windfalls are promises paid after control has passed, credible only up to $\bar m_U$ (\cref{sec:commitment}). The Tier~3 threat is a cut Washington would make permanent, and by \cref{lem:selflimit}(iii) a longer cut adds no bite once Europe's future premium is positive.
+
+In the complete-information game an issued ultimatum is accepted, so Europe's refusal requires the setting of \cref{prop:breakdown}, in which Washington does not know what a transfer would cost the governments concerned. Refusal is then more likely when China's punishment of a transfer is credible and large and when Europe's future premium is high. Beijing's threat is conditioned on signing, so by \cref{cor:control}(d) it is never carried out if control passes, and it protects European ownership only by deterring the demand. The scenario's further claim that signing with neither power means absorbing ``the full displeasure of both great powers at once'' needs a Chinese punishment of non-alignment that the text does not state.
+
+The epilogue's counterfactual coalition of the Netherlands, Germany, France, Norway, the United Kingdom, Canada, Japan and South Korea \citep{juijn2026europe} lies outside the model, which has one rival and lets holders bargain one at a time (\cref{sec:scope}).
