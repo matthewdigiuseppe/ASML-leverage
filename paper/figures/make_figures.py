@@ -111,7 +111,7 @@ def fig_master():
         ax.plot(Q, P, color=col, lw=1.8, solid_capstyle="round", label=lab)
     ax.set_xlim(-4, 2.5)
     ax.set_ylim(-4, 2.6)
-    ax.set_xlabel("Exit premium, $Q$ (patron's stake $V = 3$)")
+    ax.set_xlabel("Exit premium, $Q$ (Washington's dependence $V = 3$)")
     ax.set_ylabel("Transfer to Europe, $P^*$")
     ax.text(-3.9, 2.2, "Above zero: Washington pays", color=TEXT2, fontsize=7.5)
     ax.text(-2.75, -1.95, "Below zero: Europe concedes", color=TEXT2, fontsize=7.5)
