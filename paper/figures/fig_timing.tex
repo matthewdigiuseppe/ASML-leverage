@@ -1,13 +1,21 @@
 \begin{figure}[t]
 \centering
 \begin{tikzpicture}[x=1cm,y=1cm,font=\small]
-\draw[-{Latex[length=2mm]}, line width=0.6pt, gray] (0,0) -- (14.2,0);
-\foreach \x/\lab/\who in {0.8/{US offers $\tau_U\in[0,B_U]$}/{(1)}, 4.4/{China offers $\tau_C\in[0,B_C]$}/{(2)}, 8.0/{Europe chooses $A$ or $X$}/{(3)}, 11.6/{Instruments used}/{(4)}}{
+\draw[-{Latex[length=2mm]}, line width=0.6pt, gray] (0,0) -- (14.6,0);
+\foreach \x/\lab/\who in {
+  0.7/{Stakes: conditional promises and threats announced}/{(1)},
+  3.6/{Bidding: Washington and Beijing bid for alignment}/{(2)},
+  6.5/{Europe chooses $A$ or $X$}/{(3)},
+  9.4/{Demands: ultimatums backed by instruments}/{(4)},
+  12.3/{Instruments used; rents paid}/{(5)}}{
   \fill[black] (\x,0) circle (2pt);
-  \node[above=4pt, align=center, text width=3.1cm] at (\x,0) {\who\\ \lab};
+  \node[above=4pt, align=center, text width=2.6cm] at (\x,0) {\who\\ \lab};
 }
-\node[below=6pt, align=left, text width=5.2cm, font=\footnotesize] at (12.3,0) {US: defend in a crisis?\\ deny frontier AI? penalize ASML?\\ China: restrict critical inputs?};
+\node[below=6pt, align=center, text width=2.8cm, font=\footnotesize] at (0.7,0) {conditionality $\kappa$; caps $\bar m_U, \bar m_C$};
+\node[below=6pt, align=center, text width=2.8cm, font=\footnotesize] at (3.6,0) {\cref{lem:bidding}, \cref{prop:master}};
+\node[below=6pt, align=center, text width=2.8cm, font=\footnotesize] at (9.4,0) {\cref{prop:slack}};
+\node[below=6pt, align=center, text width=2.8cm, font=\footnotesize] at (12.3,0) {defence, posture, AI access, penalties};
 \end{tikzpicture}
-\caption{Timing of the static game. Each instrument in stage (4) is used only if doing so is sequentially rational (\cref{lem:credible}).}
+\caption{Timing of one period. Each threat in stage (5) is carried out only if doing so is sequentially rational given the stakes announced in stage (1). \Cref{sec:control} links periods through control rights.}
 \label{fig:timing}
 \end{figure}
