@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\input{preamble}
+\onehalfspacing
+
+% Set to true for a version without author information (double-blind review).
+\newif\ifanonymous
+\anonymousfalse
+
+\title{Owning the Chokepoint: ASML, Alliance Dependence, and the Limits of Europe's Leverage over Washington}
+\ifanonymous
+\author{}
+\else
+\author{Matt DiGiuseppe\thanks{Working draft, \today. Almost all of this paper was written by Claude, an AI system made by Anthropic, working in Claude Code. Claude wrote the model, the proofs, the numerical checks, the literature and fact review, the text, the tables and the figures. Matt DiGiuseppe's contribution was the research question, the instructions and the reading material (including the \emph{Europe 2031} scenario). Results were checked by brute-force computation, and code is available on request.} \and Claude (Anthropic)}
+\fi
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent \input{sections/00_abstract}
+\end{abstract}
+
+\newpage
+\input{sections/01_intro}
+\input{sections/02_background}
+\input{sections/03_literature}
+\input{sections/04_model}
+\input{sections/05_slack}
+\input{sections/06_control}
+\input{sections/07_decide}
+\input{sections/08_evidence}
+\input{sections/09_implications}
+\input{sections/10_conclusion}
+
+{\raggedright
+\bibliographystyle{aer}
+\bibliography{refs}
+}
+
+\appendix
+\input{sections/A0_supplementary}
+\input{sections/A_proofs}
+\input{sections/B_numerics}
+\input{sections/C_scenario}
+\end{document}
