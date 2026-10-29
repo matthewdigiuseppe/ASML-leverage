@@ -17,3 +17,9 @@ Sources: notes/review/gap_european_cost_parameters.md, gap_dutch_domestic_politi
 
 ## Model remark on Chinese punishment
 - The record shows China punishing specific acts: the Dutch Goods Availability Act order (Nexperia), Japan's Taiwan statement, the Commission's FSR probe of Nuctech (Decree 835 determination), European defence firms. We find no punishment of a holder for aligning its chokepoint export controls with Washington. In the model, punishment of specific acts is a counter-threat on a concession (Proposition 3); punishment of a security statement with a demonstration motive is self-rewarding (g_r >= 0) and would enter Q only if attached to alignment itself.
+
+## Scenario quotes verified against the saved scenario text (scratchpad dl/scenario.md, dl/summary.md)
+- "The only card Europe still holds is ASML" appears on the scenario's summary page (europe2031.ai summary). The narrative (2031 chapter) says "But Europe has one last card to play." Either may be quoted; attribute the first to the summary.
+- "we didn't even manage to negotiate a single thing in return" is spoken by the character Caroline (2028 chapter). Verbatim.
+- 2031: "The US vice president delivers the offer in a forty-minute call over a secure line. ASML itself will be folded into a joint Dutch-American holding company, governed by a shared board on which Washington holds a controlling vote over output, customers, and technology transfer." The US also offers "a capital injection on a scale Europe cannot match".
+- 2031: "The US knows it holds all the cards: through its Taiwanese partners, it has amassed enough EUV machines and maintenance know-how to forego ASML access for longer than Europe can forego access to frontier AI."
