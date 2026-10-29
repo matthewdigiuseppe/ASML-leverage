@@ -1,0 +1,119 @@
+\documentclass[11pt]{article}
+\input{../preamble}
+\onehalfspacing
+
+\title{Europe's ASML Card in Three Numbers: A Minimal Model}
+\author{Matt DiGiuseppe\thanks{Working note, \today. Companion to \emph{Owning the Chokepoint: ASML, Alliance Dependence, and the Limits of Europe's Leverage over Washington} (working draft, 29 October 2026). Almost all of this note was written by Claude, an AI system made by Anthropic, working in Claude Code. Matt DiGiuseppe's contribution was the research question, the instructions and the reading material. Every result is a special case of a result proved in the full paper, and each was checked by brute-force computation (\texttt{code/checks/minimal\_model\_check.py}).} \and Claude (Anthropic)}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent The full paper explains how much bargaining power Europe draws from ASML, the only maker of the machines that print the most advanced AI chips, with a model that has many moving parts. This note keeps three numbers: what China's offer is really worth to Europe, what Washington would really cut off if Europe switched sides, and what Washington would lose if it did. Europe is paid its walk-away value, the first number minus the second, and not its importance to Washington. When that value is negative, Washington can squeeze Europe up to the shortfall, and every demand it makes draws on that one budget. Washington's need for ASML matters only if stalled talks hurt Washington, Europe has a say in the terms, and Europe can tie its own hands. When Europe's position is set to improve, Washington has a reason to demand control of ASML while it can still squeeze.
+\end{abstract}
+
+\section{The question}
+
+ASML, a Dutch firm, is the only company that builds extreme ultraviolet lithography machines, and the most advanced AI chips cannot be made without them. A scenario published in June 2026, \emph{Europe 2031}, calls ASML ``the only card Europe still holds'' \citep{juijn2026europe}. Yet since 2019 the Netherlands has gone along with Washington's demands to restrict sales to China and has been paid nothing for it. What it received in December 2024, an exemption from new US rules on foreign-made chip tools, is a status Washington can take back by changing a rule. If Washington needs ASML so badly, why has Europe got so little for it?
+
+The full paper answers with a model of many parts. This note keeps only what is needed for the main answer.
+
+\section{Three numbers and one rule}
+
+Three numbers describe the bargain, all measured in what they are worth to Europe.
+
+\begin{description}[leftmargin=1.2em, labelindent=0em]
+\item[China's offer, $c\ge 0$.] What China would really give Europe for switching sides and supplying it. Europe discounts Chinese promises it doubts, and part of what China would gain is blocked anyway by US legal reach over the American parts and staff inside ASML's machines.
+\item[Washington's penalty, $k\ge 0$.] What Washington would really cut off if Europe switched: the American parts and staff ASML needs, access to frontier AI, and the part of its security support it would withdraw from a disloyal ally. Help Washington would give Europe anyway, for its own reasons, is not part of $k$, however large it is.
+\item[Washington's need, $V>0$.] What Washington would lose if Europe switched and China got the tools.
+\end{description}
+
+\noindent The quantity that matters is Europe's \emph{walk-away value}, $c-k$: how much better off Europe would be by switching, all things counted. When it is negative, its size $k-c$ is Washington's \emph{squeeze room}.
+
+\paragraph{The rule.} Washington names a deal. It can offer Europe a payment, or demand concessions such as tighter controls on sales to China, and it can back the deal with a public threat to cut off $k$ if Europe refuses. Europe accepts or refuses. If it refuses and the threat is carried out, Europe decides whether to switch sides.
+
+Washington names the deal because the status quo already gives it what it wants: Europe stays aligned and ASML's machines keep flowing to American and allied chip plants. If talks fail, Washington loses nothing, so it can turn down any European demand and come back with its own offer. Giving Washington the first move is a shortcut for that fact, not an assumption that it holds every card. \Cref{sec:need} drops it.
+
+One feature of the rule drives most of what follows. \emph{Carrying out the threat frees Europe.} Once Washington has cut off $k$, Europe has nothing more to lose by switching, so its alternative jumps from $c-k$ to $c$, and Washington must match $c$ or let Europe go. That is why a threat to cut Europe off can take at most $k-c$, not $k$.
+
+\section{What Europe gets}\label{sec:gets}
+
+\begin{proposition}[Price and squeeze]\label{min:price}
+Europe always secures its walk-away value $c-k$. If Washington's threat sticks, it offers exactly $c-k$: it pays Europe $c-k$ when China's offer exceeds Washington's penalty, and takes concessions worth $k-c$ when it does not. If the threat does not stick, Washington pays $\max\{0,c-k\}$. Either way, Washington keeps Europe if and only if $c-k\le V$.
+\end{proposition}
+
+Europe is paid for its alternative, not for being needed. Washington's need, $V$, decides only whether Washington would rather pay or let Europe go. It does not raise the price. Threats matter only on the downside. When Europe's walk-away value is positive, Washington has to pay it, threats or no threats. When it is negative, a Washington whose threats do not stick pays nothing and gets nothing, while a Washington whose threats stick extracts concessions up to the squeeze room. \Cref{fig:minimal} shows both cases.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.82\textwidth]{fig_minimal.pdf}
+\caption{What Europe gets for ASML. Europe is paid its walk-away value, China's offer minus Washington's penalty, and not its importance to Washington. Washington's need $V$ (here $3$) decides only where Washington stops paying and lets Europe go. Below zero, credible threats let Washington extract concessions up to its squeeze room, and every demand draws on that room. Illustrative units.}
+\label{fig:minimal}
+\end{figure}
+
+\begin{proposition}[One budget]\label{min:budget}
+However Washington combines its demands and threats, it cannot take more than $k-c$ from Europe in total.
+\end{proposition}
+
+Every American demand draws on the same squeeze room: export controls, limits on servicing machines already in Chinese plants, tariff cuts, arms purchases, defence spending. A concession won on one issue leaves less to win on the others. Splitting its threats across issues does not help Washington, because carrying out one raises Europe's walk-away value by the amount withdrawn, and the remaining threats bite less. Washington reaches the full budget only by making all its demands at once. Piecemeal demands get less, because a Europe that expects more demands to follow its concessions has less reason to make them \citep{pauly2024damned}.
+
+The budget explains a pattern in the record that otherwise looks inconsistent. The Netherlands gave way on controls over the sale of new machines, yet as of mid-2026 Dutch and Japanese firms were still servicing machines installed in Chinese plants, and the Dutch cabinet objected when a bill in Congress, the MATCH Act, proposed reaching into allied countries to stop that. On our reading this is a government rationing concessions within a fixed budget, not defying its patron.
+
+\section{When being needed pays}\label{sec:need}
+
+The rule assumed that failed talks cost nobody anything. Suppose instead that each round of stalled talks costs Washington $X$ and Europe $Y$, and that Europe names the terms a share $\beta$ of the time. Then Europe gets the larger of $c-k$ and
+\[
+\beta X-(1-\beta)Y .
+\]
+Two things make stalled talks costly. Talks might collapse into a realignment that neither side chose, which costs Washington its need $V$ and costs Europe $k-c$ when its alternative is poor. This is how Washington's need can enter the price. Or Europe might stop servicing the machines in Washington's own chip plants, which costs those plants something every round (call it $x$) and costs Europe its own lost sales and Washington's retaliation (call it $y$). The appendix gives the exact weights.
+
+Being needed pays only under three conditions. First, Europe must have a say: if Washington always names the terms ($\beta=0$), Europe's power to hurt is worth nothing. Second, a stoppage counts only if Europe sets it before offers are made and cannot lift it after rejecting one. A stoppage Europe would call off at Washington's first offer is never used. The European Union's tools work the other way: they let Brussels suspend countermeasures at once but escalate only slowly, and twice in 2025 member states approved countermeasures against Washington and then suspended them as soon as Washington moved. Third, for the collapse channel the full paper shows that a Washington with credible threats can take the gain back down to Europe's walk-away value. We expect the same for a stoppage but have not proved it.
+
+\section{When Washington wants control}\label{sec:control-min}
+
+Washington's squeeze room lasts only while Europe's alternative stays poor. Rearmament, European computing capacity or a better Chinese offer would raise Europe's walk-away value and shrink the room.
+
+\begin{proposition}[Control]\label{min:control}
+Suppose Europe's walk-away value is negative today and will be positive tomorrow, and Washington has nothing else it values to spend today's squeeze on. Then Washington demands control of ASML today, and Europe accepts, if and only if today's squeeze room, $k-c$, exceeds $s$, the political cost to Europe of handing over control.
+\end{proposition}
+
+Washington uses the squeeze while it still has one, to avoid paying Europe later. The handover costs Europe sovereignty and only saves Washington payments, so it destroys value, much as preventive war does. This is the logic of the ultimatum in \emph{Europe 2031}, in which Washington proposes folding ASML into a joint company it controls. The condition that Washington has nothing better to spend the squeeze on matters. If it could cash today's squeeze in concessions worth as much to it as they cost Europe, it would take those instead and never bother with control.
+
+\section{Where Washington's penalty comes from}
+
+The penalty $k$ is partly Washington's choice: it decides how much of its support to tie to Europe's loyalty, and tying support to loyalty costs it trust with every ally. A Washington that wants nothing beyond alignment ties just enough support to hold Europe's walk-away value at zero. It goes further only to create squeeze room it plans to spend. A stronger Chinese offer is therefore met with more strings attached to American protection, not with money.
+
+\section{What this note leaves out}
+
+The full paper adds what the three numbers hide. China puts a price on particular European concessions, as it did in the 2025 dispute over the chipmaker Nexperia, and that limits which concessions Washington can win. Europe does not decide as one: the Dutch government licenses sales to China, while any move against Washington needs the European Union. Each threat has to be credible on its own terms. Washington's need also helps Europe indirectly, by making China bid more and by making Washington reluctant to punish a firm its own chip plants depend on. The paper's reading of the record finds that US legal reach over ASML's parts and staff, and the threat to withhold frontier AI, weigh more in Washington's penalty than troops do, though how closely American protection is tied to Europe's export controls remains untested.
+
+{\raggedright
+\bibliographystyle{aer}
+\bibliography{../refs}
+}
+
+\appendix
+\section{Statements and proofs}
+
+Notation: $q=c-k$; $\pos{z}=\max\{z,0\}$. Payoffs are measured from the status quo, in which Europe stays aligned and no one pays. If Europe accepts a deal $t$ and stays, it gets $t$ and Washington $-t$ ($t<0$ means concessions costing Europe $-t$). If Europe switches, Washington gets $-V$. An indifferent Europe accepts.
+
+\paragraph{\Cref{min:price}.} \emph{With a committed threat:} after a refusal the threat is carried out, so staying gives Europe $-k$ and switching gives $c-k$. Because $c\ge 0$, Europe's refusal payoff is $\max\{-k,c-k\}=q$, so it accepts $t$ if and only if $t\ge q$. Washington's cheapest acceptable offer is $t^*=q$, which it prefers to losing Europe if and only if $q\le V$ (at $q=V$ it is indifferent). \emph{Without commitment:} if $q\le 0<c$, cutting $k$ would make Europe switch at a cost of $V$ to Washington, so Washington does not cut, and Europe's refusal payoff is $0$. If $q>0$, Europe would switch after a refusal anyway. So Europe accepts $t$ if and only if $t\ge\pos{q}$. (At the knife edge $c=0$ with a costless cut, Washington is indifferent between cutting and not, and payments between $-k$ and $0$ are also equilibria.) This is the full paper's bidding benchmark (Lemma~1) together with Proposition~2(a) when the threatened instrument is wholly conditional: Europe's payment $\pos{q}$ less the bite $\min\{k,\pos{-q}\}=\pos{-q}$ gives $q$.
+
+\paragraph{\Cref{min:budget}.} Europe can refuse every demand and absorb the withdrawal of $k$, which leaves it with $q$, so its total loss relative to $\pos{q}$ is at most $\pos{-q}$. For a single bundle of sunk demands $d_i$ with a payment $t$, Europe accepts if and only if $t-\sum_i d_i\ge q$. If demands are reversible (undone if Europe later switches), Washington must pay back any excess over $k-c$. If demands come one at a time, each backed by the same unexecuted threat, the bound holds in every subgame-perfect equilibrium, but Washington can get strictly less than the single-bundle value. This is Proposition~2(b)--(c) of the full paper.
+
+\paragraph{When being needed pays.} With rupture hazard $\lambda$, discount rate $r$ and $\psi=\lambda/(\lambda+r)$, stalled talks cost Washington $X=\psi V+(1-\psi)x$ and Europe $Y=\psi(k-c)+(1-\psi)y$ per unit of time in the frequent-offer limit. Europe's payoff is $\max\{q,\ \beta X-(1-\beta)Y\}$, which is the full paper's Proposition~6 with constant costs rewritten:
+\[
+\beta X-(1-\beta)Y=\psi\big[q+\beta(V-q)\big]+(1-\psi)\big[\beta x-(1-\beta)y\big].
+\]
+Without rupture risk and without a usable exit option, the derivation takes one line. Let $v$ be Europe's value at the start of a round and $\delta$ the per-round discount. Agreement is immediate. A European proposer offers Washington its disagreement value, and a US proposer offers Europe its own, so $v=\beta[(1-\delta)x+\delta v]+(1-\beta)[-(1-\delta)y+\delta v]$, which gives $v=\beta x-(1-\beta)y$ against $0$ without a stoppage. If Europe can lift the stoppage after an offer is rejected, lifting it saves $(1-\delta)y$ and changes nothing else, so the stoppage is never used. The claw-back result for the collapse channel is the full paper's remark on slack under rupture risk.
+
+\paragraph{\Cref{min:control}.} Two periods, discount $\delta\in(0,1]$, walk-away values $q_1$ and $q_2$. Without a demand, Washington pays $\pos{q_t}$ each period. A demand for control offers $T\ge 0$ and threatens to cut $k_1$ in period 1 if Europe refuses; handing over control costs Europe $s\ge 0$. A refusal leaves Europe with $q_1$ in period 1 (the threat frees it) and $\delta\pos{q_2}$ later, so it accepts if and only if $T-s\ge q_1+\delta\pos{q_2}$, and $T^*=\pos{q_1+\delta\pos{q_2}+s}$. Washington's gain is
+\[
+\Gamma=\pos{q_1}+\delta\pos{q_2}-T^*=\min\big\{\pos{q_1}+\delta\pos{q_2},\ \pos{k_1-c_1}-s\big\},
+\]
+which is positive if and only if $q_2>0$ and $k_1-c_1>s$ (Washington demands control only if it gains strictly). This is the special case stated after Proposition~5 of the full paper. If the same threat could instead extract concessions worth $\alpha\in[0,1]$ to Washington per unit of cost to Europe, Washington demands control if and only if $(1-\alpha)\delta q_2>\alpha s$ and $(1-\alpha)(k_1-c_1)>s$; with $\alpha=1$ it never does.
+
+\paragraph{Checks.} \texttt{code/checks/minimal\_model\_check.py} computes subgame-perfect outcomes by backward induction for every result above on tens of thousands of random draws and edge cases; all 25 checks pass. The verification report is \texttt{notes/minimal/verify.md}.
+
+\end{document}
