@@ -17,6 +17,7 @@ as in the current draft):
 | `v_prop5.py`, `v_prop5_examples.py`, `coh_breakdown*.py` | Proposition 4 (breakdown) |
 | `v_remark1.py`, `coh_dynamic_misc.py` | Remark 1 (self-binding) and misc. |
 | `nested_ab.py`, `nested_check.py`, `nested_stats*.py`, `pop_check.py` | Proposition 5 (nested chokepoints, Council arithmetic) |
+| `council_revealed_blocking.py` | Proposition 5(c): blocking minorities under revealed-position orderings, 2026 Council and EUROPOP2023 2029-2031 weights, supermajority-norm variants, exact Shapley-Shubik and Banzhaf indices |
 | `holdup_a.py`, `holdup_b.py`, `holdup_abs.py`, `holdup_buffer.py`, `coh_holdup_dir.py` | Proposition 6 (time to pain) |
 | `hedge_check.py` | Corollary 4 (marginal deterrence) |
 | `misc_cex.py` | Counterexamples to earlier draft statements |
