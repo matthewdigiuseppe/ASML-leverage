@@ -104,8 +104,8 @@ def fig_master():
     ax.plot(Q, Q, color=MUTED, lw=0.8, ls=(0, (3, 3)))
     ax.text(-3.95, -3.55, "$P = Q$", color=TEXT2, fontsize=7.5)
     cases = [(0.0, 0.0, BLUE[0], "No risk of rupture ($\\lambda = 0$)"),
-             (0.5, 0.25, BLUE[1], "$\\omega_b = 0.5$, $\\beta = 0.25$"),
-             (0.9, 0.5, BLUE[2], "$\\omega_b = 0.9$, $\\beta = 0.5$")]
+             (0.5, 0.25, BLUE[1], "$\\psi = 0.5$, $\\beta = 0.25$"),
+             (0.9, 0.5, BLUE[2], "$\\psi = 0.9$, $\\beta = 0.5$")]
     for wb, beta, col, lab in cases:
         P = np.maximum(Q, wb * (Q + beta * (V - Q)))
         ax.plot(Q, P, color=col, lw=1.8, solid_capstyle="round", label=lab)
