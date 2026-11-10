@@ -1,0 +1,27 @@
+\subsection{Conditionality as a choice}\label{app:conditionality}
+
+This subsection states the result summarized in \cref{sec:conditionality}. Choosing the stake $m_S\le\bar m_U$ is choosing $\kappa\in[\kappa_0,\bar\kappa]$, with $\kappa_0=G(s_A)-G(s_X)$ and $\bar\kappa$ as in \cref{eq:kappa}.
+
+Conditionality is costly to the coercer, and we let it cost $H(\kappa)$, nondecreasing and convex with $H(\kappa_0)=0$ (\cref{rem:assurance} derives such a cost). The cost is one of assurance: other allies discount a guarantee that comes with a broad withdrawal rule, and a guarantee tied to Europe's conduct can be triggered by mistake. Allies that doubt the patron also build capabilities of their own \citep{lanoszka2018atomic}, which raises their premia and adds to $H$. With $Q_0$ the premium at $\kappa_0$, the premium is $Q(\kappa)=Q_0-(\kappa-\kappa_0)S_k$. Washington converts slack into concessions worth $\nu\in[0,1]$ per unit of European cost, a linear simplification of the concave value of capacity in \cref{cor:rationing}, and we assume $B(J^c)\ge\Lambda$ so that all slack can be converted. The bound $\nu\le 1$, which keeps the objective concave, says that a concession is worth less to Washington than it costs Europe; with $\nu>1$ Washington would buy concessions with rent. Washington chooses $\kappa$ before the bidding stage to maximize
+\[
+\Pi(\kappa)=-\pos{Q(\kappa)}+\nu\,\pos{-Q(\kappa)}-H(\kappa).
+\]
+Let $H'$ be the right derivative of $H$. For $x\ge 0$ let $\kappa_x=\inf\{\kappa\in[\kappa_0,\bar\kappa]:H'(\kappa)\ge x\}$, with $\inf\emptyset=+\infty$, and write $\kappa_1=\kappa_{S_k}$ and $\kappa_\nu=\kappa_{\nu S_k}$, so that $\kappa_0\le\kappa_\nu\le\kappa_1$. The conditionality at which the premium is exactly zero is $\kappa_z=\kappa_0+Q_0/S_k$.
+
+\begin{proposition}[Conditionality is the price of concessions]\label{prop:conditionality}
+The conditionality
+\[ \kappa^*=\min\big\{\bar\kappa,\ \max\{\kappa_\nu,\ \min\{\kappa_z,\kappa_1\}\}\big\} \]
+maximizes $\Pi$, uniquely if $H$ is strictly convex, and $Q(\kappa^*)=(\kappa_z-\kappa^*)S_k$.
+\begin{enumerate}[label=(\alph*)]
+\item If $\nu=0$, then $\kappa^*=\kappa_0$ when $Q_0\le 0$, and $\kappa^*=\min\{\kappa_z,\kappa_1,\bar\kappa\}$ otherwise. The United States never makes its guarantee more conditional than needed to hold the premium at zero. It creates no slack: $\Lambda^*=\pos{-Q_0}$.
+\item If $\nu>0$, $\kappa_0\le\kappa_z<\bar\kappa$ and $H'(\kappa_z)<\nu S_k$, then $\kappa^*=\min\{\kappa_\nu,\bar\kappa\}>\kappa_z$ and $\Lambda^*=(\kappa^*-\kappa_z)S_k>0$: conditionality is the price of concessions. If $Q_0<0$, then $\kappa^*=\min\{\kappa_\nu,\bar\kappa\}$ and $\Lambda^*=(\kappa^*-\kappa_z)S_k\ge -Q_0$.
+\item Let $H$ be strictly convex and differentiable. Away from regime boundaries:
+  \begin{enumerate}[label=(\roman*)]
+  \item if $\kappa^*=\kappa_z$, then $d\kappa^*/dQ_0=1/S_k$ and the United States pays no rent: a stronger Chinese bid elicits a more conditional guarantee, not a payment;
+  \item if $\kappa^*=\kappa_1<\min\{\kappa_z,\bar\kappa\}$ (assurance is costly at the margin before the premium reaches zero), $\kappa^*$ does not depend on $Q_0$ and the rent $Q(\kappa_1)>0$ rises one for one with $Q_0$;
+  \item if $\kappa^*=\kappa_\nu\in(\max\{\kappa_z,\kappa_0\},\bar\kappa)$, or if $\kappa^*=\kappa_0>\kappa_z$, then $\kappa^*$ does not depend on $Q_0$ and slack falls one for one with $Q_0$: China's bid is paid for out of the United States' concessions;
+  \item if $\kappa^*=\bar\kappa$, the United States pays $\pos{Q(\bar\kappa)}$, which rises one for one with $Q_0$ when $Q(\bar\kappa)>0$. Otherwise slack falls one for one.
+  \end{enumerate}
+\item $d\bar\kappa/ds_X=g(s_X+s_L)-g(s_X-\bar m_U)$, with $s_L$ and $\bar m_U$ fixed. Hence $\bar\kappa$ is nonincreasing in $s_X$ wherever $g$ is nonincreasing on $[s_X-\bar m_U,\,s_X+s_L]$, for example when $G$ is unimodal with its mode at or below $s_X-\bar m_U$, and it is then nonincreasing in the access value of European territory and, if $s_B$ rises with $V$, in $V$. If instead $g(s_X+s_L)>g(s_X-\bar m_U)$, $\bar\kappa$ rises with $s_X$. If $s_A$ is held fixed when $s_X$ rises, $\bar\kappa$ is nonincreasing in $s_X$ for every $G$.
+\end{enumerate}
+\end{proposition}

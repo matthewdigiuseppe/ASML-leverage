@@ -5,9 +5,27 @@ Brute-force checks of the results in the paper. Run any script with `python3 -I 
 and test the published statements, including tie cases. No solver uses the formula it checks.
 Appendix C of the paper (`paper/sections/B_numerics.tex`) describes each check.
 
-## Current draft (v2)
+## Current draft (v3)
 
-Labels as in `notes/v2/resolutions.md` and the current paper. Results are named rather than numbered,
+The `v3_*` scripts check the results that are new or changed in version 3. The `v2_*` scripts below still
+check the results carried over unchanged; `v2_rupture_bite.py` now checks part of the slack principle
+(`prop:slack`) under rupture risk, which version 3 absorbed from the former remark. Results are named by
+label. Each script finishes in under 30 seconds.
+
+| Script | Result(s) | Label(s) |
+|:--|:--|:--|
+| `v3_temporary_rupture.py` | Bargaining with rupture risk and a repair rate phi: finite-Delta closed forms against backward induction, the frequent-offer limit, and the phi = 0 case | `prop:master` |
+| `v3_price_driving.py` | Price driving in the alternating-raise auction when China values Washington's payment | `rem:spite` |
+| `v3_settlement_slack.py` | Slack principle for four settlements (bidding, rupture bargaining, hold-up, price driving): bite bound and equality cases, reversible concessions, one budget, V_1, assurance | `prop:slack` |
+| `v3_linkage.py` | Issue-specific penalties and linkage: delivered set, loss decomposition, no crowding out when every demand is enforced, comparative statics in p_k | `prop:linkage` |
+| `v3_refusals.py` | Refusals under a private cost of the demand: refusal floor, monotone bite in w, unbacked requests, slack cap | `prop:refusal` |
+| `v3_assurance.py` | Assurance cost derived from a second ally, and the resulting conditionality | `rem:assurance`, `prop:conditionality` |
+| `v3_control_settlement.py` | Preventive control with Europe's price given by P* and finite enforceability, including the worked example | `rem:controlsettle` |
+| `v3_holdup_range.py` | Range of hold-up equilibria: one-shot deviations of the high-regime profile under variant (b), limits of the low and high values, and the Markov value under the main timing (part (i) is proved, not checked) | `prop:range` |
+
+## Results carried over from v2
+
+Labels as in `notes/v2/resolutions.md` and the current paper, except that `rem:rupture` is now part of `prop:slack`. Results are named rather than numbered,
 because LaTeX numbers them by order of appearance. Each script finishes in under 30 seconds.
 
 | Script | Result(s) in the current draft | Label(s) |

@@ -1,0 +1,124 @@
+\section{The Slack Principle}\label{sec:slack}
+
+\Cref{lem:bidding} and \cref{prop:master} price the chokepoint. On our reading of the record since 2019 (\cref{sec:evidence}), Europe's premium has been negative, and Washington has still asked Europe for a great deal. A patron facing an ally whose premium is negative can obtain the ally's slack, $\Lambda=\pos{-Q}$, plus whatever it can threaten that does not depend on the ally's alignment. We work in the bidding benchmark, without rupture risk, throughout this section; \cref{rem:rupture} states what changes under rupture risk.
+
+\subsection{Bite, budgets and assurance}\label{sec:slackprinciple}
+
+Consider one period in which Europe is aligned, its premium is $Q$, and it receives $\pos{Q}$ from the bidding stage. Washington has finitely many demands. Demand $k$ costs Europe $t_k>0$ and is worth $w_k>0$ to the United States. A concession is \emph{reversible} if exit would undo it, so that it lowers Europe's aligned payoff and leaves its exit payoff unchanged. A limit on servicing Chinese fabs is reversible, because a Europe that exited would resume servicing; so are tariff cuts and export-control rules. A concession is \emph{sunk} if it lowers both payoffs: payments, purchases, and transfers of assets or of control over them.
+
+Washington backs its demands with instruments (\cref{sec:security}). Withdrawing a set $J$ of instruments from an aligned Europe for the period lowers Europe's aligned payoff by $\Delta^A(J)$ and its exit payoff by $\Delta^X(J)$, with $0\le\Delta^X(J)\le\Delta^A(J)$ and both nondecreasing in $J$. We call
+\[
+u(J)=\Delta^X(J)\qquad\text{and}\qquad d(J)=\Delta^A(J)-\Delta^X(J)
+\]
+the unconditional and conditional parts of $J$. The conditional part is what Europe would lose by exiting anyway (for a single instrument, the $d_j$ of \cref{eq:Q}). The unconditional part is what Washington would still provide to an exited Europe and can threaten to take away. We impose no additivity: the AI instrument and US force posture may be complements or substitutes in Europe's payoff.
+
+Washington's credible set $J^c$ is fixed at the start of the period, and every subset of it is a credible threat, as with one stake per instrument under the commitment technology of \cref{sec:commitment}. Washington issues \emph{adaptive ultimatums}: any sequence of demands, each naming unconceded demands and a threat set of instruments not yet withdrawn, each chosen after seeing Europe's earlier responses. If Europe refuses, Washington executes the threat at cost $e(J)\ge 0$, and executed instruments stay withdrawn for the period, so a threat once carried out is \emph{spent}. A threat that deters is not spent and can back the next demand. At the end of the period the bidding contest is replayed. If $J_w$ has been withdrawn and Europe has made reversible concessions $T_{\mathrm r}$, Washington must pay $\pos{Q+d(J_w)+T_{\mathrm r}}$ to keep Europe aligned. For a set $S$ of concessions, $T_{\mathrm r}(S)$ and $T_{\mathrm s}(S)$ are its reversible and sunk totals and $W(S)=\sum_{k\in S}w_k$ its value to Washington.
+
+\begin{proposition}[Slack principle]\label{prop:slack}
+Let $\Lambda=\pos{-Q}$, $u(J)=\Delta^X(J)$, $d(J)=\Delta^A(J)-\Delta^X(J)$ and
+$B(J)=u(J)+\min\{d(J),\Lambda\}=\min\{\Delta^A(J),\Delta^X(J)+\Lambda\}$. Every subset of $J^c$ is a credible threat, no other instrument can be withdrawn during the period, executing a withdrawal of $J$ costs the United States $e(J)\ge 0$, and the United States retains Europe after every history.
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Bite.} Refusing an ultimatum backed by $J$, issued when nothing has been conceded or withdrawn, costs Europe $B(J)$, net of the rent the United States must then pay. $B$ is nondecreasing in $J$. If $Q\ge 0$, then $B(J)=u(J)$: only unconditional parts bite.
+\item \emph{Reversible concessions.} Europe's net loss from reversible concessions totalling $T$ is $\min\{T,\Lambda\}$. Faced with a single ultimatum that asks for reversible concessions $T_{\mathrm r}$ and sunk concessions $T_{\mathrm s}$ and is backed by $J$, Europe accepts if and only if $\min\{T_{\mathrm r},\Lambda\}+T_{\mathrm s}\le B(J)$.
+\item \emph{One budget.}
+  \begin{enumerate}[label=(\roman*)]
+  \item In every subgame-perfect equilibrium of every adaptive sequence of ultimatums, and for every $Q$, Europe's total net loss is at most $B(J^c)$. Conditional instruments share one budget: $B(J)-u(J)\le\Lambda$ for every $J$, and reversible concessions cost Europe at most $\Lambda$ in total, however they are backed.
+  \item The United States' equilibrium payoff is at most
+  $V_1=\max\{W(S)-\pos{Q+T_{\mathrm r}(S)}:\ \min\{T_{\mathrm r}(S),\Lambda\}+T_{\mathrm s}(S)\le B(J^c)\}$, the payoff of the best single ultimatum backed by $J^c$.
+  \item If the United States can commit to a single ultimatum, one bundled ultimatum backed by $J^c$ yields $V_1$. Europe's loss then equals $B(J^c)$ if the United States has a divisible sunk demand of positive value and of size at least $B(J^c)$.
+  \end{enumerate}
+\item \emph{Assurance.} Without that commitment the United States still obtains $V_1$ if all demands are reversible and $B(J^c)\ge\Lambda$, or if some best single ultimatum contains all of its demands. (In every equilibrium if $e(J)>0$ for every nonempty $J$, as with additive execution costs that are positive for each instrument; in some equilibrium otherwise.) In general it can obtain strictly less. Threats that deter are not spent, so the United States reuses them after Europe concedes, and Europe anticipates this. With one instrument with $d=0$ and $n$ identical sunk demands of cost $\tau$, the United States obtains exactly $n \bmod (b+1)$ of them, where $b=\lfloor B(J^c)/\tau\rfloor$.
+\end{enumerate}
+\end{proposition}
+
+\Cref{app:proofs} has the proof and \cref{app:numerics} the brute-force checks. Withdrawing a conditional part from an aligned Europe takes away something Europe would lose by exiting anyway, so it raises Europe's premium by $d(J)$. Up to $\Lambda$ the withdrawal hurts Europe. Beyond $\Lambda$ the premium turns positive and Washington must pay rent to keep Europe aligned, which hands the excess back. A reversible concession works the same way, which is part (b): it lowers only the aligned payoff, so past $\Lambda$ Europe would exit unless compensated. Sunk concessions and unconditional parts escape the cap because they hurt Europe whatever it does.
+
+\Cref{prop:slack} takes Europe's payoff from alignment to be $\pos{Q}$, the corner of \cref{prop:master} in which Washington's dependence does not matter. Where rupture risk raises Europe's payoff above $\pos{Q}$, the budget is larger.
+
+\begin{remark}[Slack under rupture risk]\label{rem:rupture}
+Suppose Europe's payoff from alignment is the bargaining outcome $P^*(Q)$ of \cref{prop:master} rather than the bidding payment $\pos{Q}$, and that Europe's premium stays below $V$ after every withdrawal. Withdrawing a threat set $J$ then costs Europe $B_\psi(J)=\Delta^A(J)-[P^*(Q+d(J))-P^*(Q)]$, and $B_\psi(J)\le u(J)+\min\{d(J),\Lambda_\psi\}$ with $\Lambda_\psi\equiv P^*(Q)-Q$, which exceeds $\Lambda$ exactly when $P^*(Q)>\pos{Q}$. The bound holds with equality when the outside option binds after the withdrawal ($r>0$ and $Q+d(J)\ge\hat Q$), and $B_\psi=B$ when $\lambda=0$. Part (c)(i) of \cref{prop:slack} holds with $B_\psi$ and $\Lambda_\psi$ in place of $B$ and $\Lambda$.
+\end{remark}
+
+The proof is in \cref{app:proofs}. The budget $\Lambda_\psi$, Europe's surplus over exit, grows with $V$ while agenda power binds. It can also be smaller than $\Lambda$: when rupture risk makes Europe concede in the bargaining ($P^*(Q)<0$), threats can extract only the rest of its surplus over exit. Take $Q=-1$, $V=4$, $\beta=0.5$, $\lambda=1$ and $r=0.25$. Then $\Lambda=1$ and $\Lambda_\psi=2.2$, and withdrawing a conditional part of $3$ costs Europe $1.8$. Whatever agenda power under rupture risk wins Europe above $\pos{Q}$, credible conditional threats can claw back, down to the exit premium. The agenda channel of \cref{cor:master}(e) therefore survives only to the extent that Washington lacks credible conditional threats large enough to push Europe to its outside option.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig_slack.pdf}
+\caption{The slack budget. Panel (a): the bite of a conditional instrument with $d=2$ rises one for one with Europe's slack $\Lambda$ until $\Lambda=2$; an unconditional instrument with $u=1$ bites the same at every $\Lambda$. Panel (b): two conditional instruments with $d=1.5$ each. The sum of their separate bites (dashed) overstates their joint bite $\min\{3,\Lambda\}$ at every $\Lambda<3$. Bites from \cref{prop:slack}(a).}
+\label{fig:slack}
+\end{figure}
+
+In panel (a) of \cref{fig:slack} the unconditional threat is the smaller one, yet it is the only one that still works as $\Lambda$ falls toward zero. Panel (b) illustrates part (c)(i). A coercer that prices each conditional threat on its own counts the same slack twice: at $\Lambda=1$ the separate bites sum to $2$ and the joint bite is $1$. The bound in (c)(i) needs a fixed credible set (\cref{app:numerics}), which the stake technology supplies: an instrument is credible when its execution cost is at most $\bar m_U$, whatever has happened before.
+
+Part (d) is the assurance problem of a coercer that cannot commit to stop demanding. Europe concedes only if everything the unspent threat will extract later stays within the bite. With $b+1$ identical sunk demands, a single ultimatum obtains $b$ of them. The adaptive sequence obtains none. A threat meant to induce compliance works only if the target believes compliance will end it \citep{schelling1966arms}, and \citet{pauly2024damned} shows that the steps that make a threat credible weaken that belief. A staked promise to make no further demand in the period buys the commitment. Stakes cost nothing. Part (d) therefore describes a patron whose cap $\bar m_U$ is small relative to the value of its later demands. Such a patron can gain by issuing an ultimatum it expects Europe to refuse, which burns an instrument that would otherwise back later demands (\cref{app:numerics}).
+
+\begin{corollary}[Rationing]\label{cor:rationing}
+Suppose all demands are reversible and either the United States can commit to a single ultimatum or $B(J^c)\ge\Lambda$. Then its optimal demand set solves
+\[ \max_{y_k\in\{0,1\}}\ \sum_k w_k y_k-\pos{\textstyle\sum_k t_k y_k-\Lambda}
+   \quad\text{s.t.}\quad \min\Big\{\sum_k t_k y_k,\Lambda\Big\}\le B(J^c), \]
+with one $y_k$ for each demand $k$. This is the knapsack $\max\sum_k w_k y_k$ s.t.\ $\sum_k t_k y_k\le\min\{\Lambda,B(J^c)\}$ if $B(J^c)<\Lambda$, or if demands are divisible ($y_k\in[0,1]$) and $w_k\le t_k$ for every $k$. In general the United States may exceed $\Lambda$ and pay the excess back as rent. The free capacity $\min\{\Lambda,B(J^c)\}$ falls as $Q$ rises toward $0$. Demands from every issue area draw on it.
+\end{corollary}
+
+Export-control alignment and limits on servicing in China are reversible concessions (\cref{sec:background}). So are the trade terms of August 2025, under which the EU said it would eliminate tariffs on US industrial goods and align its technology-security requirements with US ones \citep{whitehouse2025jointstatement}. The NATO spending target for 2035 \citep{nato2025hague} and the EU's stated intention to buy more US military equipment \citep{whitehouse2025jointstatement} are closer to sunk, since they cost Europe whatever it later does with ASML. The reversible demands share the capacity $\min\{\Lambda,B(J^c)\}$, so a concession extracted on tariffs leaves less to extract on servicing, and the sunk ones, which slack does not cap, draw on the whole bite. At The Hague in June 2025 Trump tied Spain's trade terms to its defence spending: ``We're negotiating with Spain on a trade deal. We're going to make them pay twice as much'' \citep{rte2025nato}.
+
+\subsection{Counter-threats and hedges}\label{sec:counter}
+
+As in \cref{sec:security}, Chinese coercion enters only as counter-threats attached to particular concessions, announced before Washington makes its demands. We also consider a hedge, legacy-tool sales and servicing worth $y_H$ to Europe and $w_H$ to Washington if stopped: Washington can demand that Europe stop it, backed by $J^c$ (linkage), or threaten to block the hedged flows with its own jurisdiction, at net ex post cost $e_F$.
+
+\begin{proposition}[Counter-threats and hedges]\label{prop:counter}
+Maintain the assumptions of \cref{prop:slack}.
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Counter-threats.} Before the United States moves, China chooses credible counter-threats $r_k\in[0,\bar r_k]$. If concession $k$ is made and $r_k>0$, China executes at cost $e^C_k>0$ and Europe bears the sunk loss $r_k$. China loses $z_k\ge 0$ when concession $k$ is made. The United States makes a single ultimatum backed by $J^c$, and its optimal bundle is unique at the profiles compared below.
+  \begin{enumerate}[label=(\roman*)]
+  \item A counter-threat adds $r_k$ to the sunk cost of $k$: Europe accepts $S$ if and only if
+  \[ \min\{T_{\mathrm r}(S),\Lambda\}+T_{\mathrm s}(S)+\textstyle\sum_{k\in S}r_k\le B(J^c). \]
+  \item China does better than with no threats only if the United States' demand set changes.
+  \item If a counter-threat on $k$ is executed in China's optimal profile, then dropping it changes the United States' demand set to one that contains a demand outside the equilibrium set. China executes on path only to crowd out other demands, and this occurs for an open set of parameters.
+  \item The United States' payoff is weakly lower under any profile of counter-threats.
+  \item Europe's net loss is at most $B(J^c)$ with or without counter-threats. It equals $B(J^c)$ in both cases if the United States has a divisible sunk demand of positive value that China cannot threaten. The counter-threat then taxes the patron, not the holder. Otherwise Europe's loss can rise or fall.
+  \end{enumerate}
+\item \emph{Policing a hedge.} Stopping a hedge worth $y_H$ to Europe is a reversible concession. If it is the only demand, linkage stops the hedge if and only if $\min\{y_H,\Lambda\}\le B(J^c)$ and $w_H\ge\pos{y_H-\Lambda}$, where $w_H$ is its value to the United States. The United States then pays rent $\pos{y_H-\Lambda}$. Linkage is free only if $y_H\le\min\{\Lambda,B(J^c)\}$, and its free part $\min\{y_H,\Lambda\}$ vanishes as $Q\to 0$. A staked threat to block the hedge by flow jurisdiction, with net ex post cost $e_F$, is credible if and only if $e_F\le\bar m_U$. It leaves $Q$ unchanged and is never executed. Executing a conditional withdrawal $J$ raises Europe's premium to $Q+d(J)$.
+\end{enumerate}
+\end{proposition}
+
+Part (a) changes who pays for Chinese coercion. By (a)(i) a counter-threat makes a concession more expensive for Europe exactly as a sunk cost would. If Washington has other demands that China cannot reach, it fills the budget with them, and Europe's loss stays at $B(J^c)$. Washington drops the demand China has made expensive for others it values less, so the counter-threat taxes the patron. China gains only by changing what Washington asks for (part (a)(ii)), and it carries out a threat only to crowd out another demand (part (a)(iii); \cref{app:proofs} gives an example on the equilibrium path). \Cref{sec:record} reads the Nexperia episode against that requirement.
+
+Part (b) separates the slack logic from a coercer that prices each demand at a fixed cost of the cheapest credible instrument (\cref{sec:predictions}). The free part of linkage, $\min\{y_H,\Lambda\}$, shrinks as the premium rises toward zero, and beyond it Washington must pay rent. Flow jurisdiction does not depend on slack: it is credible whenever $e_F\le\bar m_U$ and leaves $Q$ unchanged. So linkage against a hedge worth less to Washington than to Europe ($w_H<y_H$) should appear when the ally has slack and fade as its premium approaches zero, while the use of flow jurisdiction should not track the premium at all. A cost minimizer that counted the rent as a cost of linkage would predict the same switch.
+
+Given our reading that Europe's premium has been negative since 2019 (\cref{sec:evidence}), the record is consistent with the first half of this prediction. The 2025 National Security Strategy and the August 2025 joint statement tie favourable treatment and US AI exports to export-control alignment (\cref{sec:background}), a reversible concession. The second half needs variation in premia that the Dutch record alone does not supply (\cref{sec:tests}).
+
+\subsection{Conditionality as a choice}\label{sec:conditionality}
+
+Washington chooses its conditionality. With $\kappa=G(s_A)-G(s_X-m_S)$ from \cref{eq:kappa}, choosing the stake $m_S\le\bar m_U$ is choosing $\kappa\in[\kappa_0,\bar\kappa]$, where $\kappa_0=G(s_A)-G(s_X)$ is the conditionality with no stake and $\bar\kappa$ is the largest Washington can create.
+
+Conditionality is costly to the coercer, and we let it cost $H(\kappa)$, increasing and convex with $H(\kappa_0)=0$. The cost is one of assurance: other allies discount a guarantee that comes with a broad withdrawal rule, and a guarantee tied to Europe's conduct can be triggered by mistake. Allies that doubt the patron also build capabilities of their own \citep{lanoszka2018atomic}, which raises their premia and adds to $H$. With $Q_0$ the premium at $\kappa_0$, the premium is $Q(\kappa)=Q_0-(\kappa-\kappa_0)S_k$. Washington converts slack into concessions worth $\nu\in[0,1]$ per unit of European cost, a linear simplification of the concave value of capacity in \cref{cor:rationing}, and we assume $B(J^c)\ge\Lambda$ so that all slack can be converted. The bound $\nu\le 1$, which keeps the objective concave, says that a concession is worth less to Washington than it costs Europe; with $\nu>1$ Washington would buy concessions with rent. Washington chooses $\kappa$ before the bidding stage to maximize
+\[
+\Pi(\kappa)=-\pos{Q(\kappa)}+\nu\,\pos{-Q(\kappa)}-H(\kappa).
+\]
+Let $H'$ be the right derivative of $H$. For $x\ge 0$ let $\kappa_x=\inf\{\kappa\in[\kappa_0,\bar\kappa]:H'(\kappa)\ge x\}$, with $\inf\emptyset=+\infty$, and write $\kappa_1=\kappa_{S_k}$ and $\kappa_\nu=\kappa_{\nu S_k}$, so that $\kappa_0\le\kappa_\nu\le\kappa_1$. The conditionality at which the premium is exactly zero is $\kappa_z=\kappa_0+Q_0/S_k$.
+
+\begin{proposition}[Conditionality is the price of concessions]\label{prop:conditionality}
+The conditionality
+\[ \kappa^*=\min\big\{\bar\kappa,\ \max\{\kappa_\nu,\ \min\{\kappa_z,\kappa_1\}\}\big\} \]
+maximizes $\Pi$, uniquely if $H$ is strictly convex, and $Q(\kappa^*)=(\kappa_z-\kappa^*)S_k$.
+\begin{enumerate}[label=(\alph*)]
+\item If $\nu=0$, then $\kappa^*=\kappa_0$ when $Q_0\le 0$, and $\kappa^*=\min\{\kappa_z,\kappa_1,\bar\kappa\}$ otherwise. The United States never makes its guarantee more conditional than needed to hold the premium at zero. It creates no slack: $\Lambda^*=\pos{-Q_0}$.
+\item If $\nu>0$, $\kappa_0\le\kappa_z<\bar\kappa$ and $H'(\kappa_z)<\nu S_k$, then $\kappa^*=\min\{\kappa_\nu,\bar\kappa\}>\kappa_z$ and $\Lambda^*=(\kappa^*-\kappa_z)S_k>0$: conditionality is the price of concessions. If $Q_0<0$, then $\kappa^*=\min\{\kappa_\nu,\bar\kappa\}$ and $\Lambda^*=(\kappa^*-\kappa_z)S_k\ge -Q_0$.
+\item Let $H$ be strictly convex and differentiable. Away from regime boundaries:
+  \begin{enumerate}[label=(\roman*)]
+  \item if $\kappa^*=\kappa_z$, then $d\kappa^*/dQ_0=1/S_k$ and the United States pays no rent: a stronger Chinese bid elicits a more conditional guarantee, not a payment;
+  \item if $\kappa^*=\kappa_1<\min\{\kappa_z,\bar\kappa\}$ (assurance is costly at the margin before the premium reaches zero), $\kappa^*$ does not depend on $Q_0$ and the rent $Q(\kappa_1)>0$ rises one for one with $Q_0$;
+  \item if $\kappa^*=\kappa_\nu\in(\max\{\kappa_z,\kappa_0\},\bar\kappa)$, or if $\kappa^*=\kappa_0>\kappa_z$, then $\kappa^*$ does not depend on $Q_0$ and slack falls one for one with $Q_0$: China's bid is paid for out of the United States' concessions;
+  \item if $\kappa^*=\bar\kappa$, the United States pays $\pos{Q(\bar\kappa)}$, which rises one for one with $Q_0$ when $Q(\bar\kappa)>0$. Otherwise slack falls one for one.
+  \end{enumerate}
+\item $d\bar\kappa/ds_X=g(s_X+s_L)-g(s_X-\bar m_U)$, with $s_L$ and $\bar m_U$ fixed. Hence $\bar\kappa$ is nonincreasing in $s_X$ wherever $g$ is nonincreasing on $[s_X-\bar m_U,\,s_X+s_L]$, for example when $G$ is unimodal with its mode at or below $s_X-\bar m_U$, and it is then nonincreasing in the access value of European territory and, if $s_B$ rises with $V$, in $V$. If instead $g(s_X+s_L)>g(s_X-\bar m_U)$, $\bar\kappa$ rises with $s_X$. If $s_A$ is held fixed when $s_X$ rises, $\bar\kappa$ is nonincreasing in $s_X$ for every $G$.
+\end{enumerate}
+\end{proposition}
+
+A patron with no further demands ($\nu=0$) makes its guarantee just conditional enough to hold the premium at zero, or less if assurance becomes too costly first. Conditionality beyond that point is worth buying only because slack can be spent, so only a patron that plans to make demands makes its guarantee more conditional than the rivalry with China requires. Europe pays for the extra conditionality with the concessions it then makes. Other allies pay through weaker assurance. Because the argument uses only a conditional part chosen before the bidding stage at a convex cost, we think it carries over, with $d_j$ in place of $\kappa S_k$, to the other instruments.
+
+By part (c)(i), when assurance is cheap at the margin Washington answers a stronger Chinese offer by making its guarantee more conditional, by exactly enough to keep the premium at zero. It pays nothing. We read the favourable treatment that the National Security Strategy offers aligning countries this way (\cref{sec:counter,sec:coding}). Where assurance is already costly at the margin, or Washington is already spending slack, it pays for China's bid in rent or in forgone concessions (parts (c)(ii) and (c)(iii)).
+
+An untargeted drawdown, such as the cut of 25,000 or more troops from Europe that NBC News reported in September 2026 the Pentagon was weighing \citep{nbc2026pentagon}, lowers what Washington provides to a loyal ally, $x_p(A)$, and with it $d_p$ and Europe's slack. The May 2026 order moving troops out of Germany (\cref{sec:background}) punished an act with no prior demand, which lies outside our demand-and-threat structure. Read as the execution of an implicit threat, it spends the instrument (\cref{sec:slackprinciple}) and raises the target's premium by the instrument's conditional part (\cref{prop:counter}(b)). Carrying it out at all requires the burning logic described after \cref{prop:slack} or incomplete information, and its effect on other allies' beliefs about $\kappa$ lies outside the model.
+
+Part (d) gives the sign of the silicon shield, the fourth channel of \cref{cor:master}(e). If holding the chokepoint raises Washington's stake in Europe's security whatever Europe's alignment, then $s_X$ rises. Where $G$ is unimodal with its mode at or below $s_X-\bar m_U$, so that the most likely crisis costs lie below Washington's net stake in a Europe that has exited, a higher $s_X$ lowers the most conditionality Washington can create. Where a staked abandonment makes defence of an exiter unlikely, $s_X-\bar m_U$ lies in the left tail of $G$, where the density rises, and holding the chokepoint can make the guarantee more conditional. \citet{blankenship2021price} finds that allies in locations the United States values contribute less to the common burden, which is what part (d) implies when $g$ is nonincreasing on the relevant interval.
