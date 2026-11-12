@@ -40,7 +40,7 @@ Empirically, the record is consistent with US legal reach over ASML's inputs and
 | Path | Contents |
 |---|---|
 | `paper/` | LaTeX source for the article (`main.tex`) and the online supplement (`supplement.tex`), with `sections/`, `preamble.tex`, `refs.bib`, figures and the compiled PDFs |
-| `paper/sections/` | One file per section. Article: `00_abstract` to `09_conclusion`. Supplement: `S0_notation` to `S4_cases`, then `A_proofs`, `B_numerics` and `C_scenario` |
+| `paper/sections/` | One file per section. Article: `00_abstract` to `08_conclusion`. Supplement: `S0_notation` to `S4_cases`, then `A_proofs`, `B_numerics` and `C_scenario` |
 | `code/checks/` | Python scripts that spot-check each result by brute force; `README.md` there maps scripts to results (`v3_*` scripts check the results new or changed in version 3, `v2_*` scripts the results carried over) |
 | `notes/review/` | The initial literature and fact review, written and fact-checked by subagents |
 | `notes/v3_sections/`, `notes/v2_sections/` | The version 3 and version 2 LaTeX sections, kept for the record |
