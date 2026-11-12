@@ -1,0 +1,50 @@
+\subsection{Who decides}\label{app:decide}
+
+\Cref{sec:decide} separates the three European deciders and states the results informally. This subsection states them formally and gives the Council arithmetic. Proofs are in \cref{app:proofs} and the enumeration checks in \cref{app:numerics}.
+
+\paragraph{The gatekeeper.} The Hague licenses exit toward China, and $Q_{NL}=\omega_{NL}-c_{NL}$ is its own exit premium: the value to the Netherlands of China's credible offer, net of the credible costs of exit that fall on the Netherlands. By \cref{lem:bidding}, Washington keeps the Netherlands aligned at price $\pos{Q_{NL}}$ when $Q_{NL}<V$ and $Q_{NL}\le\bar m_U$. The remark asks what a benefit aimed at the gatekeeper alone does to that price.
+
+\begin{remark}[Gatekeeper]\label{rem:gatekeeper}
+Let $x_h\ge0$ be the value to the Netherlands of a benefit that the United States provides to a loyal Netherlands in the baseline and credibly withdraws if the Netherlands licenses exit. Then the gatekeeper's premium becomes $Q_{NL}'=Q_{NL}-x_h$. If $Q_{NL}<V$ and $Q_{NL}\le\bar m_U$, the United States' payment falls from $\pos{Q_{NL}}$ to $\pos{Q_{NL}-x_h}$, that is, by $\min\{x_h,\pos{Q_{NL}}\}$. The gatekeeper's slack rises from $\pos{-Q_{NL}}$ to $\pos{x_h-Q_{NL}}$, that is, by $\pos{x_h-\pos{Q_{NL}}}$. If $Q_{NL}>\min\{V,\bar m_U\}$, the benefit restores alignment if and only if $Q_{NL}-x_h\le\bar m_U$ (and $Q_{NL}-x_h<V$). A benefit paid as a promised increment above the baseline lowers no payment, since the total outlay is then $\max\{x_h,Q_{NL}\}\ge\pos{Q_{NL}}$.
+\end{remark}
+
+\paragraph{The firm.} A licence permits a shipment and orders nothing. The remark adds the firm's choice to the exit decision, with the US penalty discounted by its credibility and the two penalties for complying with US measures that China and the Union can impose.
+
+\begin{remark}[Firm between jurisdictions]\label{rem:firm}
+Suppose the Netherlands licenses exit. The firm earns $y$ from its Chinese business and faces the credible US penalty $f^F=\chi_f f$ if it ships. If it complies with US measures instead, it faces a Chinese penalty $p_C\ge0$ for that compliance and a penalty $p_B\ge0$ under the EU Blocking Statute, which is positive only if the US measures are listed in the statute's annex. The firm ships if and only if $y+p_C+p_B\ge f^F$ (ties ship). If it would not ship, exit requires the state to compel it at cost $\zeta\ge0$, where $\zeta$ excludes the firm's own net loss (already counted in $\omega$ and $c$ through $y$ and $d_f$). Europe's effective exit premium is $Q-\zeta\,\mathbf 1\{y+p_C+p_B<f^F\}$, and Europe compels the firm only if $Q-\zeta>0$.
+\end{remark}
+
+\paragraph{The Council.} Let $q_i$ be member $i$'s net gain from adopting an anti-US countermeasure. A qualified majority needs at least 15 of 27 members representing at least 65 percent of the population, and abstention counts against. Under the Anti-Coercion Instrument the Council first determines by qualified majority that coercion exists, and response measures then pass the examination and, if needed, the appeal committee \citep{eu2023aci, eu2011comitology}. A delegated act removing the United States from EU001 stands unless the European Parliament or a reinforced qualified majority of the Council (20 members representing 65 percent of the population) objects \citep{eu2021dualuse, eu2016tfeu}.
+
+\begin{remark}[Blocking minorities]\label{rem:council}
+Let $\mathcal B$ be the family of coalitions that block the Council's determination at the first stage: at least 13 members, or at least four members with more than 35 percent of the population. With enforceable vote-contingent payments and no rival bidder, the United States defeats the determination at cost $\Phi(0)=\min_{J\in\mathcal B}\sum_{i\in J}\pos{q_i}$. Members with $q_i\le0$ join any blocking coalition at zero cost, so $\Phi(0)$ is the cheapest completion of $F=\{i:q_i\le0\}$ into a blocking coalition, and $\Phi(0)=0$ if and only if $F\in\mathcal B$. The six frontline states (15.09 percent of the population) do not block. Thirteen eastern and Nordic members (26.77 percent) do, by number. Defeating a response measure in the appeal committee needs a qualified majority against, and defeating a delegated act by Council objection needs a reinforced qualified majority against. Each such coalition is in $\mathcal B$, so it costs at least $\Phi(0)$.
+\end{remark}
+
+The cost function is the one-voter logic of \cref{lem:bidding} applied to a weighted body, as in \citet{groseclose1996buying}. We assume no one bids for adoption; with a counter-bidder that moves last, Washington would have to buy more than a minimal blocking coalition \citep{groseclose1996buying, banks2000buying}. Since a defeat at any later stage costs at least $\Phi(0)$, a Washington that wants to stop a countermeasure buys its blocking minority before the determination. \Cref{tab:council} gives the arithmetic for the coalitions that matter.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Blocking arithmetic in the Council, 2026 population weights}\label{tab:council}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}Xrrcc@{}}
+\toprule
+Coalition & Members & Population (\%) & Blocks det. & Saves delegated act\\
+\midrule
+Frontline core: PL, LT, LV, EE, FI, RO & 6 & 15.09 & no & no\\
+Core plus SE, DK & 8 & 18.75 & no & yes (members)\\
+Bucharest Nine plus FI, SE, DK & 12 & 25.91 & no & yes\\
+Core plus SE, DK, CZ, SK, HU, BG, HR & 13 & 26.77 & yes (members) & yes\\
+\quad the same with SI for HU & 13 & 25.13 & yes (members) & yes\\
+\quad the same with SI and GR for HU and HR & 13 & 26.57 & yes (members) & yes\\
+Eight smallest members & 8 & 3.18 & no & yes (members)\\
+DE, FR, IT & 3 & 46.84 & no & yes (population)\\
+\bottomrule
+\end{tabularx}
+\begin{minipage}{\textwidth}\footnotesize\vspace{4pt}
+\emph{Note:} A coalition blocks the determination (\emph{Blocks det.}; first stage of the Anti-Coercion Instrument) if it has at least 13 members, or at least four members with more than 35 percent of the population. It keeps a delegated act removing the United States from EU001 in force against a Council objection (\emph{Saves delegated act}) if it has at least 8 members or more than 35 percent. No coalition in the table can defeat a response measure in the appeal committee, which takes a qualified majority against. Population shares from Council Decision 2025/2427 \citep{council2025population}; blocking status is our computation from the treaty rules, checked by enumeration (\cref{app:numerics}).
+\end{minipage}
+\end{table}
+
+The frontline core falls short on both counts, and a population block without Germany, France, Italy and Spain needs at least twelve members. If all thirteen eastern and Nordic members in the fourth row had $q_i\le0$, Washington would defeat a determination for free. That group is not a fixed bloc: Hungary changed government in May 2026, though Slovenia or Greece can replace it and the group still has thirteen members.
+
+Informal norms and procedural defaults pull the outcome away from this arithmetic, in opposite directions. Council practice is consensual. About four in five legislative acts passed with no recorded negative vote or abstention in 1994--2002 \citep{heisenberg2005institution}; \citet{hage2013coalition} models that consensus as a by-product of negotiators organizing around blocking minorities before any vote, which is our reason for keeping the formal threshold as the primitive; and recorded votes understate opposition, because a vote would disclose who lost \citep{novak2013silence}. These data predate the Lisbon voting rules, so we treat them as indicative. Reversed defaults pull the other way. On 4 October 2024 the trade-defence committee gave no opinion on countervailing duties on battery electric vehicles from China, with ten member states in favour, five against and twelve abstaining, and the Commission adopted the duties on 29 October \citep{afp2024bev, ec2024bev, eu2011comitology}. The Anti-Coercion Instrument's no-opinion clause reverses that default at the committee stage, so the vote shows only what the Commission does when a procedure puts the burden on opponents, as the instrument's appeal stage and the delegated-act route both do. The Commission's commitment not to go against a predominant position among member states (\cref{sec:council}) bears at every stage.

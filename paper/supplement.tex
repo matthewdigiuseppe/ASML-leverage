@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+\input{preamble}
+\externaldocument{main}
+\onehalfspacing
+
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\theproposition}{S\arabic{proposition}}
+\renewcommand{\thelemma}{S\arabic{lemma}}
+\renewcommand{\thecorollary}{S\arabic{corollary}}
+\renewcommand{\theremark}{S\arabic{remark}}
+\renewcommand{\thedefinition}{S\arabic{definition}}
+\renewcommand{\theassumption}{S\arabic{assumption}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theequation}{S\arabic{equation}}
+
+\title{Online Supplement to ``Owning the Chokepoint: ASML, Alliance Dependence, and the Limits of Europe's Leverage over Washington''}
+\author{Matt DiGiuseppe \and Claude (Anthropic)}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\noindent This supplement states the extensions that the article summarizes in \cref{sec:extensions}, describes the earlier cases behind \cref{sec:cases}, proves every result, reports the numerical checks, and reads the \emph{Europe 2031} scenario against the model. References to sections, results, figures and equations without an S are to the article.
+
+\input{sections/S0_notation}
+\input{sections/S1_counter}
+\input{sections/S2_control}
+\input{sections/S3_decide}
+\input{sections/S4_cases}
+\input{sections/A_proofs}
+\input{sections/B_numerics}
+\input{sections/C_scenario}
+
+{\raggedright
+\bibliographystyle{aer}
+\bibliography{refs}
+}
+\end{document}

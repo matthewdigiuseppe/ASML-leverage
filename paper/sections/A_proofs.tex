@@ -1,6 +1,6 @@
 \section{Proofs}\label{app:proofs}
 
-This appendix proves the results in the order in which the main text discusses them, including those stated formally in \cref{app:supp}. Where a statement leaves a modelling point open, the proof begins by fixing it. Symbols introduced inside a proof are local to that proof. Throughout, $\pos{x}=\max\{x,0\}$ and $\mathbf 1\{\cdot\}$ is the indicator function. \Cref{app:numerics} describes the brute-force check of each result.
+This section proves every result in the article and in this supplement, those of the article first. Where a statement leaves a modelling point open, the proof begins by fixing it. Symbols introduced inside a proof are local to that proof. Throughout, $\pos{x}=\max\{x,0\}$ and $\mathbf 1\{\cdot\}$ is the indicator function. \Cref{app:numerics} describes the brute-force check of each result.
 
 \subsection{Proof of \texorpdfstring{\Cref{lem:bidding}}{the bidding benchmark}}
 
@@ -161,6 +161,15 @@ In the bidding benchmark \cref{eq:Lbound} holds with equality: if $Q\ge 0$, then
 
 \paragraph{Which settlements qualify.} $\pos{q}$ satisfies (S1)--(S3). Under rupture risk, $\mathcal P(q)=\max\{q,\psi(q+\beta(V-q))\}$ is the maximum of two affine functions with slopes $1$ and $\psi(1-\beta)\in[0,1]$, so it satisfies (S1)--(S3); by \cref{prop:master} it is Europe's equilibrium payoff and Washington's is its negative while $q<V$. With constant disagreement costs, \cref{prop:pain}(iii) gives $\max\{q,\psi(q+\beta(V-q))+(1-\psi)N\}$, where $N$ does not depend on $q$, and the same argument applies. Under price driving (\cref{rem:spite}), a withdrawal or a reversible concession lowers Europe's aligned payoff relative to its exit payoff by the same amount whether measured against $Q$ or against $\bar b_C$, so the price at premium $q$ is $\pos{q+\bar b_C-Q}$, which satisfies (S1)--(S3) because $\bar b_C\ge Q$. \emph{Example.} With $Q=-1$, $V=4$, $\beta=0.5$, $\lambda=1$, $r=0.25$ and $\phi=0$, $\psi=0.8$ and $\hat Q=8/3$. Then $P^*(-1)=\max\{-1,0.8\times 1.5\}=1.2$, so $\Lambda=1$ and $\Lambda_{\mathcal P}=2.2$. Withdrawing a conditional part $d=3$ with $u=0$ moves the premium to $2<\hat Q$, where $P^*(2)=2.4$. So $B=3-(2.4-1.2)=1.8$, which exceeds $\Lambda$ and is below $\min\{d,\Lambda_{\mathcal P}\}=2.2$. Where the second term of $P^*$ binds at $Q$, $\varrho(T)=(1-\psi(1-\beta))T$ for every $T\le\Lambda_{\mathcal P}$, because $\hat Q\ge P^*(Q)$ there, so $Q+T$ stays below $\hat Q$.
 
+\subsection{Proof of \texorpdfstring{\Cref{cor:rationing}}{rationing}}
+
+\begin{proof}[Proof of \cref{cor:rationing}]
+For every $Q$ and every $T\ge 0$, $\pos{Q+T}=\pos{Q}+\pos{T-\Lambda}$: if $Q\ge 0$ then $\Lambda=0$, and if $Q<0$ then $Q+T=T-\Lambda$. So Washington's payoff from a conceded reversible set $S$ with nothing withdrawn is $-\pos{Q}+W(S)-\pos{T(S)-\Lambda}$. By \cref{prop:slack}(b), (c)(iii) and (d), Washington obtains the best single ultimatum backed by $J^c$, so it chooses $S$ to maximize this payoff subject to $\min\{T(S),\Lambda\}\le B(J^c)$, which is the stated program.
+If $B(J^c)<\Lambda$, the constraint reads $T(S)\le B(J^c)<\Lambda$ and the rent term vanishes, which gives the knapsack with capacity $B(J^c)=\min\{\Lambda,B(J^c)\}$. Let demands be divisible with $w_k\le t_k$ for every $k$, and let $B(J^c)\ge\Lambda$, so that the constraint is slack. At any $y$ with $T>\Lambda$, lowering $y_k$ by a small $\varepsilon$ for some $k$ with $y_k>0$ changes the objective by $\varepsilon(t_k-w_k)\ge 0$, so some optimum has $T\le\Lambda$. It solves the knapsack with capacity $\Lambda=\min\{\Lambda,B(J^c)\}$.
+Without divisibility the reduction fails. Take $\Lambda=B(J^c)=1$ and one demand with $t=1.5$ and $w=1.4$. The knapsack value is $0$, but Washington obtains $1.4-0.5=0.9$ by making the demand and paying rent $0.5$.
+The free capacity $\min\{\Lambda,B(J^c)\}$ is nonincreasing in $Q$ because $\Lambda=\pos{-Q}$ is and $B(J^c)=u(J^c)+\min\{d(J^c),\Lambda\}$ is.
+\end{proof}
+
 \subsection{Proof of \texorpdfstring{\Cref{prop:linkage}}{linkage}}
 
 \paragraph{Assumptions.} Those of \cref{prop:slack}. Each penalty $p_k$ is staked and credible whatever Europe's alignment. Reversing a linked concession while staying aligned gives Europe at most what exiting with the same reversals gives, so Europe's aligned options reverse only unlinked concessions, while exit may reverse any. The settlement is applied to Europe's best aligned payoff $a$ and its best exit payoff $x$, as in \cref{prop:slack}: Europe receives $a+\mathcal P(x-a)$. Ties go to keeping a concession. Washington makes no unlinked demand with $t_k>p_k$, which would give it nothing.
@@ -173,13 +182,20 @@ In the bidding benchmark \cref{eq:Lbound} holds with equality: if $Q\ge 0$, then
 (c) Raise $p_k$ for some $k\in S$. If $k\notin L$ or $t_k\le p_k$, only $\min\{t_k,p_k\}$ changes, weakly upward, so the loss weakly rises and the settlement is unchanged. If $k\in L$ and $t_k>p_k$, a rise of $\varepsilon\le t_k-p_k$ moves $\varepsilon$ from $T_{\mathrm r}$ to $T_{\mathrm s}$, which changes the loss by $\varepsilon-[\varrho(T_{\mathrm r})-\varrho(T_{\mathrm r}-\varepsilon)]\ge 0$, because $\varrho(T)=T-[\mathcal P(Q+T)-\mathcal P(Q)]$ is nondecreasing with slope at most one by (S2) and (S3); and it lowers the settlement weakly by (S2). Larger rises combine these two cases. Now let $B(J^c)\ge\sum_kt_k$. For every set and linkage, $L(S,\emptyset)=T_{\mathrm s}+\varrho(T_{\mathrm r})\le T_{\mathrm s}+T_{\mathrm r}\le\sum_kt_k\le B(J^c)$, so every bundle is acceptable and $V_1=\max_{S,L}\{W(S_d)-\mathcal P(Q+T_{\mathrm r}(S,L))\}$, where $S_d$ is the set delivered. Raising $p_k$ weakly enlarges $S_d$ and weakly lowers $T_{\mathrm r}$ for every $(S,L)$, so it weakly raises $V_1$.
 \end{proof}
 
-\subsection{Proof of \texorpdfstring{\Cref{cor:rationing}}{rationing}}
+\subsection{Proof of \texorpdfstring{\Cref{prop:refusal}}{refusals and executed threats}}
 
-\begin{proof}[Proof of \cref{cor:rationing}]
-For every $Q$ and every $T\ge 0$, $\pos{Q+T}=\pos{Q}+\pos{T-\Lambda}$: if $Q\ge 0$ then $\Lambda=0$, and if $Q<0$ then $Q+T=T-\Lambda$. So Washington's payoff from a conceded reversible set $S$ with nothing withdrawn is $-\pos{Q}+W(S)-\pos{T(S)-\Lambda}$. By \cref{prop:slack}(b), (c)(iii) and (d), Washington obtains the best single ultimatum backed by $J^c$, so it chooses $S$ to maximize this payoff subject to $\min\{T(S),\Lambda\}\le B(J^c)$, which is the stated program.
-If $B(J^c)<\Lambda$, the constraint reads $T(S)\le B(J^c)<\Lambda$ and the rent term vanishes, which gives the knapsack with capacity $B(J^c)=\min\{\Lambda,B(J^c)\}$. Let demands be divisible with $w_k\le t_k$ for every $k$, and let $B(J^c)\ge\Lambda$, so that the constraint is slack. At any $y$ with $T>\Lambda$, lowering $y_k$ by a small $\varepsilon$ for some $k$ with $y_k>0$ changes the objective by $\varepsilon(t_k-w_k)\ge 0$, so some optimum has $T\le\Lambda$. It solves the knapsack with capacity $\Lambda=\min\{\Lambda,B(J^c)\}$.
-Without divisibility the reduction fails. Take $\Lambda=B(J^c)=1$ and one demand with $t=1.5$ and $w=1.4$. The knapsack value is $0$, but Washington obtains $1.4-0.5=0.9$ by making the demand and paying rent $0.5$.
-The free capacity $\min\{\Lambda,B(J^c)\}$ is nonincreasing in $Q$ because $\Lambda=\pos{-Q}$ is and $B(J^c)=u(J^c)+\min\{d(J^c),\Lambda\}$ is.
+\paragraph{Assumptions.} Those of \cref{prop:slack}, with one demand whose net cost $\kappa$ to Europe is drawn from a continuous distribution $F$ and observed only by Europe. The demand is enforced (\cref{prop:linkage}), so accepting it lowers Europe's aligned and exit payoffs equally and leaves the settlement unchanged. Every subset of $J^c$ is credible. Washington chooses $J\subseteq J^c$, Europe accepts or refuses, and a refused threat is carried out. Ties go to acceptance.
+
+\begin{proof}[Proof of \cref{prop:refusal}]
+Accepting costs Europe $\kappa$ and refusing costs it the bite $B(J)$ (\cref{prop:slack}(a)), with $B(\emptyset)=0$, so Europe accepts if and only if $\kappa\le B(J)$. A staked threat is carried out after a refusal because its execution cost is within the cap. Relative to no demand, Washington gains $w$ if Europe accepts and loses $E(J)=e(J)+\mathcal P(Q+d(J))-\mathcal P(Q)\ge 0$ if Europe refuses, so its expected payoff is $U(J;w)=F(B(J))w-(1-F(B(J)))E(J)$.
+
+(a) The refusal probability is $1-F(B(J^*))$. Since $B$ is nondecreasing and $J^*\subseteq J^c$, it is at least $1-F(B(J^c))$, the lowest refusal probability any threat set achieves, and $B(J^c)\le u(J^c)+\min\{d(J^c),\Lambda_{\mathcal P}\}$ by \cref{prop:slack}(a). With $u=0$ in the bidding benchmark, $B(J^c)\le\Lambda=\pos{-Q}$, which is nonincreasing in $Q$. The equilibrium refusal probability itself need not move with $Q$ in either direction, because Washington's choice of $J^*$ changes with the bites.
+
+(b) $U(\emptyset;w)=F(0)w>0=U(\text{no demand})$ whenever $F(0)>0$, so making no demand is not optimal, and a refused unbacked request triggers nothing.
+
+(c) Among threat sets with the same bite $b$, Washington prefers one with the smallest execution cost $E_{\min}(b)$, whatever $w$ is. So it chooses $b$ from the finite set of attainable bites to maximize $f(b,w)=F(b)w-(1-F(b))E_{\min}(b)$. For $b'>b$, $f(b',w)-f(b,w)$ has derivative $F(b')-F(b)\ge 0$ in $w$, so $f$ has increasing differences, and by \citet[Theorem 4]{milgrom1994monotone} the set of maximizers is nondecreasing in $w$ in the strong set order. Its largest element is therefore nondecreasing in $w$.
+
+(d) This is the last statement of \cref{prop:counter}(b), and an executed instrument stays withdrawn for the period by assumption.
 \end{proof}
 
 \subsection{Proof of \texorpdfstring{\Cref{prop:counter}}{counter-threats and hedges}}
@@ -198,22 +214,6 @@ The free capacity $\min\{\Lambda,B(J^c)\}$ is nonincreasing in $Q$ because $\Lam
 (v) Europe accepts only bundles whose cost under (i) is at most $B(J^c)$, so its loss is at most $B(J^c)$ under every profile. If Washington also has the divisible sunk demand of the proof of \cref{prop:slack}(c)(iii) and China cannot threaten it, the argument there shows that every optimal bundle has loss exactly $B(J^c)$ under every profile, and the counter-threat changes only the mix of demands. Otherwise the loss can move either way. In the example of (iii), Europe's loss rises from $1.8$ to $1.9$. For a fall, let $B(J^c)=2$, let demand 1 be sunk with $t_1=1.9$, $w_1=10$, $z_1=5$, threatenable with $\bar r_1=0.5$ at $e^C_1=0.1$, and let demand 2 be sunk with $t_2=1$, $w_2=5$, $z_2=0$ and not threatenable. Without threats Washington demands only demand 1 (the pair costs $2.9$), and Europe loses $1.9$. With $r_1=0.5$ demand 1 costs $2.4$, so Washington demands only demand 2, the threat is never executed, China's payoff rises from $-5$ to $0$, and Europe's loss falls to $1$.
 
 (b) The hedge is a reversible demand with $t=y_H$. By \cref{prop:slack}(b), Europe accepts it if and only if $\min\{y_H,\Lambda\}\le B(J^c)$. By the identity in the proof of \cref{cor:rationing}, Washington's payoff changes by $w_H-\pos{y_H-\Lambda}$ when the hedge is stopped, so it makes the demand if and only if $w_H\ge\pos{y_H-\Lambda}$, and it pays the rent $\pos{y_H-\Lambda}$. The demand is free if and only if $y_H\le\Lambda$ and it is accepted, that is, $y_H\le\min\{\Lambda,B(J^c)\}$, and its free part $\min\{y_H,\Lambda\}$ vanishes as $Q\to 0$ because $\Lambda$ does. Blocking the hedge by flow jurisdiction is a threat with net ex post execution cost $e_F$, so under the commitment technology it is credible if and only if $e_F\le\bar m_U$. Under complete information it deters and is not executed, and it involves no instrument whose withdrawal changes Europe's exit payoff relative to its aligned payoff, so $Q$ is unchanged. Finally, executing a withdrawal of $J$ lowers Europe's aligned payoff by $\Delta^A(J)$ and its exit payoff by $\Delta^X(J)$, so its premium rises to $Q+d(J)$ (Step 0 of the proof of \cref{prop:slack}).
-\end{proof}
-
-\subsection{Proof of \texorpdfstring{\Cref{prop:refusal}}{refusals and executed threats}}
-
-\paragraph{Assumptions.} Those of \cref{prop:slack}, with one demand whose net cost $\kappa$ to Europe is drawn from a continuous distribution $F$ and observed only by Europe. The demand is enforced (\cref{prop:linkage}), so accepting it lowers Europe's aligned and exit payoffs equally and leaves the settlement unchanged. Every subset of $J^c$ is credible. Washington chooses $J\subseteq J^c$, Europe accepts or refuses, and a refused threat is carried out. Ties go to acceptance.
-
-\begin{proof}[Proof of \cref{prop:refusal}]
-Accepting costs Europe $\kappa$ and refusing costs it the bite $B(J)$ (\cref{prop:slack}(a)), with $B(\emptyset)=0$, so Europe accepts if and only if $\kappa\le B(J)$. A staked threat is carried out after a refusal because its execution cost is within the cap. Relative to no demand, Washington gains $w$ if Europe accepts and loses $E(J)=e(J)+\mathcal P(Q+d(J))-\mathcal P(Q)\ge 0$ if Europe refuses, so its expected payoff is $U(J;w)=F(B(J))w-(1-F(B(J)))E(J)$.
-
-(a) The refusal probability is $1-F(B(J^*))$. Since $B$ is nondecreasing and $J^*\subseteq J^c$, it is at least $1-F(B(J^c))$, the lowest refusal probability any threat set achieves, and $B(J^c)\le u(J^c)+\min\{d(J^c),\Lambda_{\mathcal P}\}$ by \cref{prop:slack}(a). With $u=0$ in the bidding benchmark, $B(J^c)\le\Lambda=\pos{-Q}$, which is nonincreasing in $Q$. The equilibrium refusal probability itself need not move with $Q$ in either direction, because Washington's choice of $J^*$ changes with the bites.
-
-(b) $U(\emptyset;w)=F(0)w>0=U(\text{no demand})$ whenever $F(0)>0$, so making no demand is not optimal, and a refused unbacked request triggers nothing.
-
-(c) Among threat sets with the same bite $b$, Washington prefers one with the smallest execution cost $E_{\min}(b)$, whatever $w$ is. So it chooses $b$ from the finite set of attainable bites to maximize $f(b,w)=F(b)w-(1-F(b))E_{\min}(b)$. For $b'>b$, $f(b',w)-f(b,w)$ has derivative $F(b')-F(b)\ge 0$ in $w$, so $f$ has increasing differences, and by \citet[Theorem 4]{milgrom1994monotone} the set of maximizers is nondecreasing in $w$ in the strong set order. Its largest element is therefore nondecreasing in $w$.
-
-(d) This is the last statement of \cref{prop:counter}(b), and an executed instrument stays withdrawn for the period by assumption.
 \end{proof}
 
 \subsection{Proof of \texorpdfstring{\Cref{prop:conditionality}}{conditionality as the price of concessions}}

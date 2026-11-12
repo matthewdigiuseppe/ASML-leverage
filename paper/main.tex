@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
 \input{preamble}
+\externaldocument{supplement}
 \onehalfspacing
 
 % Set to true for a version without author information (double-blind review).
@@ -10,7 +11,7 @@
 \ifanonymous
 \author{}
 \else
-\author{Matt DiGiuseppe\thanks{Working draft, \today. Almost all of this paper was written by Claude, an AI system made by Anthropic, working in Claude Code. Claude wrote the model, the proofs, the numerical checks, the literature and fact review, the text, the tables and the figures. Matt DiGiuseppe's contribution was the research question, the instructions and the reading material (including the \emph{Europe 2031} scenario). Results were spot-checked numerically by brute-force computation, which is not formal verification; the code is available on request.} \and Claude (Anthropic)}
+\author{Matt DiGiuseppe\thanks{Working draft, \today. Almost all of this paper was written by Claude, an AI system made by Anthropic, working in Claude Code. Claude wrote the model, the proofs, the numerical checks, the literature and fact review, the text, the tables and the figures. Matt DiGiuseppe's contribution was the research question, the instructions and the reading material (including the \emph{Europe 2031} scenario). Results were spot-checked numerically by brute-force computation, which is not formal verification. An online supplement states the extensions and gives every proof and the numerical checks; references to sections, results and tables numbered with an S are to the supplement.} \and Claude (Anthropic)}
 \fi
 \date{\today}
 
@@ -23,24 +24,16 @@
 
 \newpage
 \input{sections/01_intro}
-\input{sections/02_background}
-\input{sections/03_literature}
-\input{sections/04_model}
-\input{sections/05_slack}
-\input{sections/06_control}
-\input{sections/07_decide}
-\input{sections/08_evidence}
-\input{sections/09_implications}
-\input{sections/10_conclusion}
+\input{sections/02_context}
+\input{sections/03_model}
+\input{sections/04_slack}
+\input{sections/05_linkage}
+\input{sections/06_extensions}
+\input{sections/08_record}
+\input{sections/09_conclusion}
 
 {\raggedright
 \bibliographystyle{aer}
 \bibliography{refs}
 }
-
-\appendix
-\input{sections/A0_supplementary}
-\input{sections/A_proofs}
-\input{sections/B_numerics}
-\input{sections/C_scenario}
 \end{document}

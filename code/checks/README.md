@@ -3,7 +3,7 @@
 Brute-force checks of the results in the paper. Run any script with `python3 -I <script>.py`
 (numpy and scipy required for a few). Scripts were written by independent adversarial verifiers
 and test the published statements, including tie cases. No solver uses the formula it checks.
-Appendix C of the paper (`paper/sections/B_numerics.tex`) describes each check.
+The section on numerical verification in the online supplement (`paper/sections/B_numerics.tex`) describes each check.
 
 ## Current draft (v3)
 

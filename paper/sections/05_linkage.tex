@@ -1,0 +1,41 @@
+\section{Linkage and Refusals}\label{sec:linkref}
+
+The slack principle treats a concession's reversibility as given. This section makes it a choice of Washington's, which determines which demands compete for Europe's slack, and then asks why, in a model in which every demand is priced in advance, Europe ever refuses one.
+
+\subsection{Which demands compete}\label{sec:linkage}
+
+Whether a concession is reversible depends on what enforces it. In \cref{prop:slack} the only thing that holds Europe to a reversible concession is the threat of losing the conditional parts of Washington's instruments, so a Europe that exited would undo every such concession at once. That is why they share one budget. Washington can also enforce a concession with a penalty of its own, attached to the issue and not to Europe's alignment: a tariff threat behind a trade concession, or a sanction behind a purchase commitment.
+
+Let demand $k$ carry an \emph{issue-specific penalty} $p_k\in[0,\infty]$: a staked threat, credible whatever Europe's alignment, to impose a loss $p_k$ on Europe if it reverses concession $k$. A payment that cannot be recovered has $p_k=\infty$. Washington \emph{links} a set $L$ of demands: it treats the reversal of a linked concession as exit, so reversing one while staying aligned gives Europe no more than exiting would. At the end of the period Europe chooses its alignment and which concessions to reverse.
+
+\begin{proposition}[Linkage]\label{prop:linkage}
+Maintain the assumptions of \cref{prop:slack}, with the penalties $p_k$ and the linked set $L$ as above.
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Enforced and linked parts.} An aligned Europe delivers concession $k$ if and only if $k$ is linked or $t_k\le p_k$. Its \emph{enforced part} $\min\{t_k,p_k\}$ enters Europe's payoffs as a sunk concession, and its \emph{linked part} $\pos{t_k-p_k}$, when $k\in L$, as a reversible one. \Cref{prop:slack} holds with $T_{\mathrm s}(S)=\sum_{k\in S}\min\{t_k,p_k\}$ and $T_{\mathrm r}(S)=\sum_{k\in S\cap L}\pos{t_k-p_k}$.
+\item \emph{Where demands crowd each other out.} Demands draw on the shared budget $\Lambda_{\mathcal P}$ only through their linked parts. If $t_k\le p_k$ for every demand, no demand needs linkage, accepted demands leave the settlement unchanged, and demands interact only through the bite constraint $\sum_{k\in S}t_k\le B(J^c)$. Linking a demand with $t_k\le p_k$ changes nothing.
+\item \emph{Who gains from separate enforcement.} For a given set of concessions, raising $p_k$ weakly raises Europe's loss and weakly lowers the settlement Washington pays. If $B(J^c)\ge\sum_k t_k$, the payoff $V_1$ of Washington's best single ultimatum is nondecreasing in each $p_k$.
+\end{enumerate}
+\end{proposition}
+
+The one budget of \cref{prop:slack} is thus the case in which Washington's only enforcement of reversible demands is the alliance itself ($p_k=0$). The more Washington can enforce a concession with a penalty that does not run through Europe's alignment, the less that concession draws on Europe's slack, and the more it costs Europe, because exit no longer undoes it. Europe's protection against an accumulation of demands is that they can be undone together. Crowding out through the slack should therefore appear between demands enforced only by linkage, and not between demands that Washington enforces separately, which interact only through the bite of its threats. That makes the cross-issue budget a claim about how Washington enforces its demands, which can be observed.
+
+Export-control alignment and limits on servicing in China are enforced by linkage, beyond what flow jurisdiction blocks directly (\cref{sec:background}). The trade terms of August 2025, under which the EU said it would eliminate tariffs on US industrial goods and align its technology-security requirements with US ones \citep{whitehouse2025jointstatement}, are enforced at least partly by the threat of higher US tariffs, so only the part of them that a tariff threat cannot hold draws on Europe's slack. The NATO spending target for 2035 \citep{nato2025hague} and the EU's stated intention to buy more US military equipment \citep{whitehouse2025jointstatement} are closer to sunk, since they cost Europe whatever it later does with ASML. They draw on the bite of Washington's instruments and not on the slack. At The Hague in June 2025 Trump tied Spain's trade terms to its defence spending: ``We're negotiating with Spain on a trade deal. We're going to make them pay twice as much'' \citep{rte2025nato}. In our terms that is linkage, which Washington needs where an issue-specific penalty cannot hold a concession on its own.
+
+China can tax a linked concession too. A Chinese counter-threat attached to a particular concession, announced before Washington moves, adds to that concession's cost exactly as a sunk cost would. If Washington has other demands China cannot reach, it fills the bite with them, so the counter-threat changes Washington's demand mix and taxes the patron rather than the holder, and China carries out a threat only to crowd out another demand (\cref{prop:counter} in \cref{app:counter}). \Cref{sec:record} reads the Nexperia episode against that requirement.
+
+\subsection{Refusals}\label{sec:refusals}
+
+Under complete information no demand is refused and no threat is carried out: Washington never makes a demand that Europe would resist. Yet Europe has resisted demands, such as limits on servicing in China (\cref{sec:intro}). A refusal needs Washington to be unsure what a demand would cost Europe. Let the net cost to Europe of one demand, $\kappa$, be Europe's private information, drawn from a continuous distribution $F$; its sign is unrestricted, since Europe may want some steps for its own reasons. To keep the settlement fixed, we let the demand be enforced ($t\le p$ in \cref{prop:linkage}), so that accepting it lowers Europe's aligned and exit payoffs equally. Washington values the concession at $w>0$, chooses a threat set $J\subseteq J^c$ before Europe responds, and carries out a refused threat. $J=\emptyset$ is an unbacked request, with $B(\emptyset)=0$. Executing $J$ costs Washington $E(J)=e(J)+\mathcal P(Q+d(J))-\mathcal P(Q)\ge 0$.
+
+\begin{proposition}[Refusals and executed threats]\label{prop:refusal}
+Under these assumptions Europe accepts if and only if $\kappa\le B(J)$, and the United States chooses $J$ to maximize $F(B(J))\,w-\big(1-F(B(J))\big)E(J)$.
+\begin{enumerate}[label=(\alph*)]
+\item In equilibrium the demand is refused with probability $1-F(B(J^*))$, and a refused demand that was backed ($J^*\neq\emptyset$) is followed by the execution of its threat. No threat set holds refusals below $1-F(B(J^c))\ge 1-F\big(u(J^c)+\min\{d(J^c),\Lambda_{\mathcal P}\}\big)$. With purely conditional instruments in the bidding benchmark this floor is at least $1-F(\Lambda)$, which rises as $Q$ rises toward $0$.
+\item An unbacked request is refused with probability $1-F(0)$ and costs nothing when refused. Whenever $F(0)>0$, the United States prefers an unbacked request to no demand, so it always makes some demand, and if the demand it makes is unbacked, a refusal has no consequence.
+\item Selecting the optimal threat set with the largest bite, $B(J^*)$ is nondecreasing in $w$: more valuable demands are backed by larger threats and are refused less often.
+\item A refused and executed conditional threat raises Europe's premium by $d(J^*)$ and is spent for the rest of the period.
+\end{enumerate}
+\end{proposition}
+
+The proposition says what the record should show. Near a zero premium, conditional threats bite little, so the refusals that Washington can prevent at any price become fewer (part (a)); the equilibrium refusal rate need not rise, since Washington may then switch to unconditional instruments or stop backing its demands. Requests that Washington does not back can be refused at no cost (part (b)). And the most valuable demands should come with the largest threats (part (c)). Dutch and Japanese resistance to limits on servicing in China fits an unbacked request better than a refused threat if, as the sources we use suggest, no US withdrawal followed it. The MATCH Act would back the request with a statutory deadline, but it had not been enacted by late October 2026 (\cref{sec:background}).
+

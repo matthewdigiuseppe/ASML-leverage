@@ -1,6 +1,6 @@
 # Owning the Chokepoint: ASML, Alliance Dependence, and the Limits of Europe's Leverage over Washington
 
-**Read the paper:** [`paper/ASML_leverage_v3_draft.pdf`](paper/ASML_leverage_v3_draft.pdf) (working draft, version 3, 10 November 2026, 115 pages). The previous draft is kept as [`paper/ASML_leverage_v2_draft.pdf`](paper/ASML_leverage_v2_draft.pdf); see [Version history](#version-history).
+**Read the paper:** [`paper/ASML_leverage_v4_article.pdf`](paper/ASML_leverage_v4_article.pdf) (working draft, version 4, 12 November 2026: a short article of about 12,000 words) and its [`online supplement`](paper/ASML_leverage_v4_supplement.pdf) (extensions, every proof, the numerical checks, earlier cases and the scenario reading). The long versions are kept as [`paper/ASML_leverage_v3_draft.pdf`](paper/ASML_leverage_v3_draft.pdf) and [`paper/ASML_leverage_v2_draft.pdf`](paper/ASML_leverage_v2_draft.pdf); see [Version history](#version-history).
 
 Authors: Matt DiGiuseppe and Claude (Anthropic)
 
@@ -39,11 +39,11 @@ Empirically, the record is consistent with US legal reach over ASML's inputs and
 
 | Path | Contents |
 |---|---|
-| `paper/` | LaTeX source (`main.tex`, `sections/`, `preamble.tex`, `refs.bib`), figures, and the compiled PDF |
-| `paper/sections/` | One file per section; `A0_supplementary`, `A_proofs`, `B_numerics` and `C_scenario` are the appendices |
+| `paper/` | LaTeX source for the article (`main.tex`) and the online supplement (`supplement.tex`), with `sections/`, `preamble.tex`, `refs.bib`, figures and the compiled PDFs |
+| `paper/sections/` | One file per section. Article: `00_abstract` to `09_conclusion`. Supplement: `S0_notation` to `S4_cases`, then `A_proofs`, `B_numerics` and `C_scenario` |
 | `code/checks/` | Python scripts that spot-check each result by brute force; `README.md` there maps scripts to results (`v3_*` scripts check the results new or changed in version 3, `v2_*` scripts the results carried over) |
 | `notes/review/` | The initial literature and fact review, written and fact-checked by subagents |
-| `notes/v2_sections/` | The version 2 LaTeX sections, kept for the record |
+| `notes/v3_sections/`, `notes/v2_sections/` | The version 3 and version 2 LaTeX sections, kept for the record |
 | `notes/model_design_v2.md`, `notes/v2/` | The design memo for the current model, the verification reports for each result, verified literature and facts, the binding drafting decisions, and the simulated review and final-check reports |
 | `notes/v1_sections/` | The first full draft, kept for the record |
 
@@ -58,6 +58,8 @@ Empirically, the record is consistent with US legal reach over ASML's inputs and
 Each round caught real errors. Among them: the first draft's headline result was already known in the literature; the revised thesis was briefly stated backwards; one example in the paper was false; and Claude itself made a mistake in a new result, which a subagent caught.
 
 ## Version history
+
+**Version 4 (12 November 2026).** At Matt DiGiuseppe's request, Claude rebuilt the paper as a short article centred on the two results it had recommended building around: the slack principle for any settlement of Europe's price, and linkage. The article (about 12,000 words, against about 23,000 in version 3) keeps the model, the price of alignment, bargaining under rupture risk, the slack principle, linkage, refusals, the record and the implications. Conditionality, preventive control, the separate roles of The Hague, ASML and the Council, and hold-up are summarized in one section and stated in full in the online supplement, which also holds every proof, the numerical checks, the comparative case tables and the reading of *Europe 2031*. Subagents condensed the background, literature, evidence and conclusion under instructions to add no new facts or citations; Claude wrote the rest and checked their output. No result was changed.
 
 **Version 3 (10 November 2026).** Matt DiGiuseppe asked Claude to check whether the game theory in version 2 was sound. Claude re-derived the main results and checked them with new brute-force solvers. It found no errors in the propositions, but several headline findings rested on modelling choices more than on strategic interaction. It recommended changes, and was asked to make them. This version:
 
@@ -80,7 +82,9 @@ The changes add about 12 pages. An independent subagent review of the new proofs
 ```bash
 cd paper
 python3 figures/make_figures.py          # figures (numpy, matplotlib)
-pdflatex main && bibtex main && pdflatex main && pdflatex main
+# the article and the supplement cross-reference each other (package xr), so build them together
+pdflatex supplement && pdflatex main && bibtex supplement && bibtex main
+pdflatex supplement && pdflatex main && pdflatex supplement && pdflatex main
 
 cd ..
 python3 -I code/checks/v3_settlement_slack.py   # any v2_* or v3_* script (numpy; some use scipy)
